@@ -1,0 +1,19 @@
+domain furb
+
+entities {
+	generateExtraResources : true
+    securityType : secure
+	enumType : ordinal
+}
+
+service basico {
+	entities{
+        entity atendimento{
+        	relationships{
+        		ManyToMany(cliente){
+        			type: aggregation
+        		}
+        	}
+        }
+    }
+}

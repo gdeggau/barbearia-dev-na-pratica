@@ -1,0 +1,67 @@
+domain furb
+
+service basico {
+    endpoints {
+        // add actions, queries, events and signals here
+        query helloWorld {
+            in {
+                who : string
+            }
+            out {
+                helloWorldMessage : string
+            }
+        }
+        
+        "Obtém a URL para upload da foto"
+        action obterUrlUploadFoto{
+            in{
+                "Id da foto, opcional, caso não tenha gera um e retorna"
+                id: string?
+            }
+            out{
+                "identificador da foto"
+                id: string 
+                "versão do arquivo para commit"
+                version: string 
+                "url para upload da foto"
+                url: string
+            }
+        }
+        "Grava a foto que foi upada"
+        action gravarFoto{
+            in{
+                "identificador da foto"
+                id: string
+                "versão que será gravada, obtida no obterUrlFoto"
+                version: string
+            }
+            out{
+                "resultado da operação"
+                result: fotoOperationResult
+            }
+        }
+        "Obtém a URL para download da foto"
+        action obterUrlDownloadFoto{
+            in{
+                "Id da foto"
+                id: string
+            }
+            out{
+                "url para download da foto"
+                url: string
+            }
+        }
+    }
+    types {
+    	"Enumeração que define o resultado da gravação da foto"
+        enumeration fotoOperationResult{
+            "Sucesso"
+            SUCCESS 
+            "Erro"
+            ERROR
+        }
+    }
+    entities {
+		
+    }
+}

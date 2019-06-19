@@ -4,6 +4,249 @@
     "name": "basico",
     "version": "${version}",
     "commands" : {
+        "retrieveFuncionario": {
+            "endpointType" : "command",
+            "kind": "retrieve",
+            "documentation": "The 'retrieve' request primitive for the Funcionario entity.",
+            "input" : {
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": false,
+                    "multivalued": false,
+                	"readOnly": true
+                }
+            },
+            "output" : "funcionario",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "updateFuncionario": {
+            "endpointType" : "command",
+            "kind": "update",
+            "documentation": "The 'update' request primitive for the Funcionario entity.",
+            "input" : "funcionario",
+            "output" : "funcionario",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "updateMergeFregues": {
+            "endpointType" : "command",
+            "kind": "updateMerge",
+            "documentation": "The 'updateMerge' request primitive for the Fregues entity.",
+            "input" : "fregues",
+            "output" : "fregues",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "importFuncionario": {
+            "endpointType" : "command",
+            "kind": "action",
+            "input" : {
+                "config" : {
+                    "type": "importConfig",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "importJobId" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "createBulkServico": {
+            "endpointType" : "command",
+            "kind": "createBulk",
+            "documentation": "The 'createBulk' request primitive for the Servico entity.",
+            "input" : {
+                "entities" : {
+                    "type": "servico",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "deleteFregues": {
+            "endpointType" : "command",
+            "kind": "delete",
+            "documentation": "The 'delete' request primitive for the Fregues entity.",
+            "input" : {
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": false,
+                    "multivalued": false,
+                	"readOnly": true
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "importAtendimento": {
+            "endpointType" : "command",
+            "kind": "action",
+            "input" : {
+                "config" : {
+                    "type": "importConfig",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "importJobId" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "exportFuncionario": {
+            "endpointType" : "command",
+            "kind": "query",
+            "idempotent": true,
+            "input" : {
+                "config" : {
+                    "type": "exportConfig",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "exportJobId" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "createServico": {
+            "endpointType" : "command",
+            "kind": "create",
+            "documentation": "The 'create' request primitive for the Servico entity.",
+            "input" : "servico",
+            "output" : "servico",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "updateAtendimento": {
+            "endpointType" : "command",
+            "kind": "update",
+            "documentation": "The 'update' request primitive for the Atendimento entity.",
+            "input" : "atendimento",
+            "output" : "atendimento",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "retrieveFregues": {
+            "endpointType" : "command",
+            "kind": "retrieve",
+            "documentation": "The 'retrieve' request primitive for the Fregues entity.",
+            "input" : {
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": false,
+                    "multivalued": false,
+                	"readOnly": true
+                }
+            },
+            "output" : "fregues",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "retrieveAtendimento": {
+            "endpointType" : "command",
+            "kind": "retrieve",
+            "documentation": "The 'retrieve' request primitive for the Atendimento entity.",
+            "input" : {
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": false,
+                    "multivalued": false,
+                	"readOnly": true
+                }
+            },
+            "output" : "atendimento",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "createMergeFregues": {
+            "endpointType" : "command",
+            "kind": "createMerge",
+            "documentation": "The 'createMerge' request primitive for the Fregues entity.",
+            "input" : "fregues",
+            "output" : "fregues",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "listFuncionario": {
+            "endpointType" : "command",
+            "kind": "list",
+            "documentation": "The 'list' request primitive for the Funcionario entity.",
+            "input" : {
+                "offset" : {
+                    "type": "integer",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "size" : {
+                    "type": "integer",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "orderBy" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "filter" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "displayFields" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "contents" : {
+                    "type": "funcionario",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
         "gravarFoto": {
             "endpointType" : "command",
             "kind": "action",
@@ -33,29 +276,22 @@
             "extensionPoint" : false,
             "visibility" : "PRIVATE"
         },
-        "getMetadata": {
+        "createBulkFregues": {
             "endpointType" : "command",
-            "kind": "query",
-            "documentation": "Default 'getMetadata' query. Every service must handle this command and return metadata in the format requested.",
-            "idempotent": true,
+            "kind": "createBulk",
+            "documentation": "The 'createBulk' request primitive for the Fregues entity.",
             "input" : {
-                "metadataFormat" : {
-                    "type": "string",
-                    "optional": true,
-                    "multivalued": false,
+                "entities" : {
+                    "type": "fregues",
+                    "optional": false,
+                    "multivalued": true,
                     "readOnly": false
                 }
             },
             "output" : {
-                "metadata" : {
-                    "type": "string",
-                    "optional": false,
-                    "multivalued": false,
-                    "readOnly": false
-                }
             },
             "extensionPoint" : false,
-            "visibility" : "PRIVATE"
+            "visibility" : "PUBLIC"
         },
         "obterUrlDownloadFoto": {
             "endpointType" : "command",
@@ -80,6 +316,254 @@
             "extensionPoint" : false,
             "visibility" : "PRIVATE"
         },
+        "createBulkAtendimento": {
+            "endpointType" : "command",
+            "kind": "createBulk",
+            "documentation": "The 'createBulk' request primitive for the Atendimento entity.",
+            "input" : {
+                "entities" : {
+                    "type": "atendimento",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "updateMergeServico": {
+            "endpointType" : "command",
+            "kind": "updateMerge",
+            "documentation": "The 'updateMerge' request primitive for the Servico entity.",
+            "input" : "servico",
+            "output" : "servico",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "importFregues": {
+            "endpointType" : "command",
+            "kind": "action",
+            "input" : {
+                "config" : {
+                    "type": "importConfig",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "importJobId" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "createBulkFuncionario": {
+            "endpointType" : "command",
+            "kind": "createBulk",
+            "documentation": "The 'createBulk' request primitive for the Funcionario entity.",
+            "input" : {
+                "entities" : {
+                    "type": "funcionario",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "createMergeAtendimento": {
+            "endpointType" : "command",
+            "kind": "createMerge",
+            "documentation": "The 'createMerge' request primitive for the Atendimento entity.",
+            "input" : "atendimento",
+            "output" : "atendimento",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "createMergeFuncionario": {
+            "endpointType" : "command",
+            "kind": "createMerge",
+            "documentation": "The 'createMerge' request primitive for the Funcionario entity.",
+            "input" : "funcionario",
+            "output" : "funcionario",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "listAtendimento": {
+            "endpointType" : "command",
+            "kind": "list",
+            "documentation": "The 'list' request primitive for the Atendimento entity.",
+            "input" : {
+                "offset" : {
+                    "type": "integer",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "size" : {
+                    "type": "integer",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "orderBy" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "filter" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "displayFields" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "contents" : {
+                    "type": "atendimento",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "deleteServico": {
+            "endpointType" : "command",
+            "kind": "delete",
+            "documentation": "The 'delete' request primitive for the Servico entity.",
+            "input" : {
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": false,
+                    "multivalued": false,
+                	"readOnly": true
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "listServico": {
+            "endpointType" : "command",
+            "kind": "list",
+            "documentation": "The 'list' request primitive for the Servico entity.",
+            "input" : {
+                "offset" : {
+                    "type": "integer",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "size" : {
+                    "type": "integer",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "orderBy" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "filter" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "displayFields" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "contents" : {
+                    "type": "servico",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "importServico": {
+            "endpointType" : "command",
+            "kind": "action",
+            "input" : {
+                "config" : {
+                    "type": "importConfig",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "importJobId" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "createFuncionario": {
+            "endpointType" : "command",
+            "kind": "create",
+            "documentation": "The 'create' request primitive for the Funcionario entity.",
+            "input" : "funcionario",
+            "output" : "funcionario",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "getMetadata": {
+            "endpointType" : "command",
+            "kind": "query",
+            "documentation": "Default 'getMetadata' query. Every service must handle this command and return metadata in the format requested.",
+            "idempotent": true,
+            "input" : {
+                "metadataFormat" : {
+                    "type": "string",
+                    "optional": true,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "metadata" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PRIVATE"
+        },
         "getDependencies": {
             "endpointType" : "command",
             "kind": "query",
@@ -90,6 +574,234 @@
                     "type": "dependency",
                     "optional": false,
                     "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "deleteFuncionario": {
+            "endpointType" : "command",
+            "kind": "delete",
+            "documentation": "The 'delete' request primitive for the Funcionario entity.",
+            "input" : {
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": false,
+                    "multivalued": false,
+                	"readOnly": true
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "createMergeServico": {
+            "endpointType" : "command",
+            "kind": "createMerge",
+            "documentation": "The 'createMerge' request primitive for the Servico entity.",
+            "input" : "servico",
+            "output" : "servico",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "listFregues": {
+            "endpointType" : "command",
+            "kind": "list",
+            "documentation": "The 'list' request primitive for the Fregues entity.",
+            "input" : {
+                "offset" : {
+                    "type": "integer",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "size" : {
+                    "type": "integer",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "orderBy" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "filter" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "displayFields" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "contents" : {
+                    "type": "fregues",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "createAtendimento": {
+            "endpointType" : "command",
+            "kind": "create",
+            "documentation": "The 'create' request primitive for the Atendimento entity.",
+            "input" : "atendimento",
+            "output" : "atendimento",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "updateServico": {
+            "endpointType" : "command",
+            "kind": "update",
+            "documentation": "The 'update' request primitive for the Servico entity.",
+            "input" : "servico",
+            "output" : "servico",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "exportServico": {
+            "endpointType" : "command",
+            "kind": "query",
+            "idempotent": true,
+            "input" : {
+                "config" : {
+                    "type": "exportConfig",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "exportJobId" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "createFregues": {
+            "endpointType" : "command",
+            "kind": "create",
+            "documentation": "The 'create' request primitive for the Fregues entity.",
+            "input" : "fregues",
+            "output" : "fregues",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "updateFregues": {
+            "endpointType" : "command",
+            "kind": "update",
+            "documentation": "The 'update' request primitive for the Fregues entity.",
+            "input" : "fregues",
+            "output" : "fregues",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "deleteAtendimento": {
+            "endpointType" : "command",
+            "kind": "delete",
+            "documentation": "The 'delete' request primitive for the Atendimento entity.",
+            "input" : {
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": false,
+                    "multivalued": false,
+                	"readOnly": true
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "updateMergeAtendimento": {
+            "endpointType" : "command",
+            "kind": "updateMerge",
+            "documentation": "The 'updateMerge' request primitive for the Atendimento entity.",
+            "input" : "atendimento",
+            "output" : "atendimento",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "retrieveServico": {
+            "endpointType" : "command",
+            "kind": "retrieve",
+            "documentation": "The 'retrieve' request primitive for the Servico entity.",
+            "input" : {
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": false,
+                    "multivalued": false,
+                	"readOnly": true
+                }
+            },
+            "output" : "servico",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "exportAtendimento": {
+            "endpointType" : "command",
+            "kind": "query",
+            "idempotent": true,
+            "input" : {
+                "config" : {
+                    "type": "exportConfig",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "exportJobId" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "updateMergeFuncionario": {
+            "endpointType" : "command",
+            "kind": "updateMerge",
+            "documentation": "The 'updateMerge' request primitive for the Funcionario entity.",
+            "input" : "funcionario",
+            "output" : "funcionario",
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "exportFregues": {
+            "endpointType" : "command",
+            "kind": "query",
+            "idempotent": true,
+            "input" : {
+                "config" : {
+                    "type": "exportConfig",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "exportJobId" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
                     "readOnly": false
                 }
             },
@@ -184,9 +896,293 @@
             "payload" : "notifyUserEventPayload",
             "extensionPoint" : false,
             "visibility" : "PRIVATE"
+        },
+        "importFreguesEvent": {
+            "endpointType" : "event",
+            "payload" : {
+                "eventpl" : {
+                    "type": "importEventStatus",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "exportFreguesEvent": {
+            "endpointType" : "event",
+            "payload" : {
+                "eventpl" : {
+                    "type": "exportEventStatus",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "importFuncionarioEvent": {
+            "endpointType" : "event",
+            "payload" : {
+                "eventpl" : {
+                    "type": "importEventStatus",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "exportFuncionarioEvent": {
+            "endpointType" : "event",
+            "payload" : {
+                "eventpl" : {
+                    "type": "exportEventStatus",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "importServicoEvent": {
+            "endpointType" : "event",
+            "payload" : {
+                "eventpl" : {
+                    "type": "importEventStatus",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "exportServicoEvent": {
+            "endpointType" : "event",
+            "payload" : {
+                "eventpl" : {
+                    "type": "exportEventStatus",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "importAtendimentoEvent": {
+            "endpointType" : "event",
+            "payload" : {
+                "eventpl" : {
+                    "type": "importEventStatus",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
+        },
+        "exportAtendimentoEvent": {
+            "endpointType" : "event",
+            "payload" : {
+                "eventpl" : {
+                    "type": "exportEventStatus",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PUBLIC"
         }
     },
     "records": {
+        "fregues" : {
+            "id" : {
+                "type": "string",
+                "format": "uuid",
+                "optional": true,
+                "multivalued": false,
+            	"readOnly": true
+            },
+            "nome" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "dataNascimento" : {
+                "type": "date",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "email" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "cpf" : {
+                "type": "string",
+                "optional": true,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "telefone" : {
+                "type": "string",
+                "optional": true,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "endereco" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "idFoto" : {
+                "type": "string",
+                "optional": true,
+                "multivalued": false,
+                "readOnly": false
+            }
+        },
+        "funcionario" : {
+            "id" : {
+                "type": "string",
+                "format": "uuid",
+                "optional": true,
+                "multivalued": false,
+            	"readOnly": true
+            },
+            "nome" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "dataNascimento" : {
+                "type": "date",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "email" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "cpf" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "endereco" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "nomeUsuario" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "senha" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "tipo" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "salario" : {
+                "type": "double",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "idFoto" : {
+                "type": "string",
+                "optional": true,
+                "multivalued": false,
+                "readOnly": false
+            }
+        },
+        "servico" : {
+            "id" : {
+                "type": "string",
+                "format": "uuid",
+                "optional": true,
+                "multivalued": false,
+            	"readOnly": true
+            },
+            "descricao" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "valor" : {
+                "type": "double",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            }
+        },
+        "atendimento" : {
+            "id" : {
+                "type": "string",
+                "format": "uuid",
+                "optional": true,
+                "multivalued": false,
+            	"readOnly": true
+            },
+            "fregues" : {
+                "type": "fregues",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "funcionario" : {
+                "type": "funcionario",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "dataAtendimento" : {
+                "type": "date",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "valorTotal" : {
+                "type": "double",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "servicos" : {
+                "type": "servico",
+                "optional": false,
+                "multivalued": true,
+                "readOnly": false
+            }
+        },
         "notifyUserEventPayload" : {
             "notificationClass" : {
                 "type": "string",
@@ -437,6 +1433,330 @@
                 "readOnly": false
             }
         },
+        "importError" : {
+            "errorType" : {
+                "type": "errorType",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "lineNumber" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "bean" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "message" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "exceptionClass" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            }
+        },
+        "fielddto" : {
+            "id" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "name" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "fieldType" : {
+                "type": "fieldType",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "start" : {
+                "type": "integer",
+                "optional": true,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "size" : {
+                "type": "integer",
+                "optional": true,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "maskPattern" : {
+                "type": "string",
+                "optional": true,
+                "multivalued": false,
+                "readOnly": false
+            }
+        },
+        "hookdto" : {
+            "hookFunction" : {
+                "type": "hookFunction",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "script" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            }
+        },
+        "layoutdto" : {
+            "id" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "description" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "fileFormat" : {
+                "type": "fileFormat",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "errorStrategy" : {
+                "type": "errorStrategy",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "delimiter" : {
+                "type": "string",
+                "optional": true,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "skipLines" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "fields" : {
+                "type": "fielddto",
+                "optional": false,
+                "multivalued": true,
+                "readOnly": false
+            },
+            "hooks" : {
+                "type": "hookdto",
+                "optional": true,
+                "multivalued": true,
+                "readOnly": false
+            }
+        },
+        "importReport" : {
+            "id" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "startTime" : {
+                "type": "dateTime",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "endTime" : {
+                "type": "dateTime",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "uri" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "beanClass" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "serviceClass" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "layout" : {
+                "type": "layoutdto",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "sucessCount" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "errorsCount" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "filteredCount" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "skippedCount" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "importErrors" : {
+                "type": "importError",
+                "optional": true,
+                "multivalued": true,
+                "readOnly": false
+            }
+        },
+        "exportEventStatus" : {
+            "importerId" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "eventType" : {
+                "type": "eventType",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "recordCount" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            }
+        },
+        "importEventStatus" : {
+            "importerId" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "eventType" : {
+                "type": "eventType",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "status" : {
+                "type": "status",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "errorMessage" : {
+                "type": "string",
+                "optional": true,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "recordCount" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "importReport" : {
+                "type": "importReport",
+                "optional": true,
+                "multivalued": false,
+                "readOnly": false
+            }
+        },
+        "exportConfig" : {
+            "uri" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "layout" : {
+                "type": "layoutdto",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "async" : {
+                "type": "boolean",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "errorStrategy" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            }
+        },
+        "importConfig" : {
+            "uri" : {
+                "type": "string",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "layout" : {
+                "type": "layoutdto",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "async" : {
+                "type": "boolean",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "batchSize" : {
+                "type": "integer",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            },
+            "errorStrategy" : {
+                "type": "errorStrategy",
+                "optional": false,
+                "multivalued": false,
+                "readOnly": false
+            }
+        },
         "dependency" : {
             "domain" : {
                 "type": "string",
@@ -476,9 +1796,253 @@
         "eventEmailFormat" : [ 
             "HTML",
             "PLAIN_TEXT"
+        ],
+        "fieldType" : [ 
+            "BINARY",
+            "BOOLEAN",
+            "DATE",
+            "DATETIME",
+            "DOUBLE",
+            "ENUM",
+            "INTEGER",
+            "MONEY",
+            "STRING",
+            "TIME"
+        ],
+        "fileFormat" : [ 
+            "CSV",
+            "FLAT",
+            "JSON",
+            "XML"
+        ],
+        "hookFunction" : [ 
+            "BEFORE_PARSE",
+            "BEFORE_CONVERSION",
+            "ON_ERROR",
+            "VALIDATE"
+        ],
+        "eventType" : [ 
+            "CHUNK",
+            "DOWNLOAD",
+            "ERROR",
+            "FINISH",
+            "START"
+        ],
+        "errorStrategy" : [ 
+            "CALL_SCRIPT",
+            "IGNORE",
+            "STOP"
+        ],
+        "status" : [ 
+            "DONE",
+            "DONE_WITH_ERRORS",
+            "DOWNLOADING",
+            "ERROR",
+            "NOT_STARTED",
+            "RUNNING"
+        ],
+        "errorType" : [ 
+            "CONVERT_ERROR",
+            "SERVICE_ERROR"
         ]
     },
     "entities" : {
+        "fregues" : {
+            "id": "id",
+            "customizable": false,
+            "slots": { 
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": true,
+                    "multivalued": false,
+                	"readOnly": true
+                },
+                "nome" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "dataNascimento" : {
+                    "type": "date",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "email" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "cpf" : {
+                    "type": "string",
+                    "optional": true,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "telefone" : {
+                    "type": "string",
+                    "optional": true,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "endereco" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "idFoto" : {
+                    "type": "string",
+                    "optional": true,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            }    
+        },
+        "funcionario" : {
+            "id": "id",
+            "customizable": false,
+            "slots": { 
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": true,
+                    "multivalued": false,
+                	"readOnly": true
+                },
+                "nome" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "dataNascimento" : {
+                    "type": "date",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "email" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "cpf" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "endereco" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "nomeUsuario" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "senha" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "tipo" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "salario" : {
+                    "type": "double",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "idFoto" : {
+                    "type": "string",
+                    "optional": true,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            }    
+        },
+        "servico" : {
+            "id": "id",
+            "customizable": false,
+            "slots": { 
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": true,
+                    "multivalued": false,
+                	"readOnly": true
+                },
+                "descricao" : {
+                    "type": "string",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "valor" : {
+                    "type": "double",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            }    
+        },
+        "atendimento" : {
+            "id": "id",
+            "customizable": false,
+            "slots": { 
+                "id" : {
+                    "type": "string",
+                    "format": "uuid",
+                    "optional": true,
+                    "multivalued": false,
+                	"readOnly": true
+                },
+                "fregues" : {
+                    "type": "fregues",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "funcionario" : {
+                    "type": "funcionario",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "dataAtendimento" : {
+                    "type": "date",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "valorTotal" : {
+                    "type": "double",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "servicos" : {
+                    "type": "servico",
+                    "optional": false,
+                    "multivalued": true,
+                    "readOnly": false
+                }
+            }    
+        }
     }
 	,
 	"versions": {

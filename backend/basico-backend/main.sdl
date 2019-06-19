@@ -62,6 +62,77 @@ service basico {
         }
     }
     entities {
+    	 "Entidade que representa o fregues"
+		fixed entity fregues{
+		    "Chave primaria"
+		    id: uuid?
+		    "Nome do cliente"
+		    nome: string
+		    "Data de nascimento"
+		    dataNascimento: date
+		    "Emal"
+		    email: string
+		    "CPF do cliente"
+		    cpf: string?
+		    "telefone"
+		    telefone: string?
+		    "Endereco"
+		    endereco: string
+		    "id da foto"
+		    idFoto: string?
+		}
+		
+		"cliente entidade"
+		fixed entity funcionario{
+			"chave"
+		    id: uuid?
+		    "nome"
+		    nome: string
+		    "data nascimento"
+		    dataNascimento: date
+		    "email"
+		    email: string
+		    "cpf"
+		    cpf: string
+		    "endereco"
+		    endereco: string
+		    "nomeUsuario"
+		    nomeUsuario: string
+		    "senha"
+		    senha: string
+		    "flag tipo"
+		    tipo: string
+		    "salario"
+		    salario: double
+		    "idFoto"
+		    idFoto: string?
+		}
+		
+		"Servico entidade"
+		fixed entity servico{
+			"chave"
+			id: uuid?
+			"descricao"
+			descricao: string
+			"valor"
+			valor: double
+		}
+		
+		"Atendimento entidade"
+		fixed entity atendimento{
+			"chave"
+			id: uuid?
+			"cliente"
+			fregues: fregues
+			"funcionario"
+			funcionario: funcionario
+			"data atendimento"
+			dataAtendimento: date
+			"valor total"
+			valorTotal: double
+			"servicos"
+			servicos: servico*
+		}
 		
     }
 }

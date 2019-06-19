@@ -1,0 +1,518 @@
+{
+	"version": "develop-SNAPSHOT",
+	"edlVersion": "13.3.2",
+	"app": "furb-basico",
+	"domain": "furb",
+	"service": "basico",
+	"enumType": "ordinal",
+	"enumerations": {
+	},
+	"entities": {
+		"cliente": {
+			"id": "id",
+			"name": "cliente",
+			"customizable": false,
+			"slots": {
+				"id": {
+					"name": "id",
+					"type": "string",
+					"format": "uuid",
+					"optional": true,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": true
+				},
+				"nome": {
+					"name": "nome",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"dataNascimento": {
+					"name": "dataNascimento",
+					"type": "date",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"email": {
+					"name": "email",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"cpf": {
+					"name": "cpf",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"endereco": {
+					"name": "endereco",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"idFoto": {
+					"name": "idFoto",
+					"type": "string",
+					"optional": true,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				}
+			},
+			"lookup": {
+				"searchFields": [
+					{
+						"name": "id",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "nome",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "dataNascimento",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "email",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "cpf",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "endereco",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "idFoto",
+						"optional": true,
+						"multiple": false
+					}
+				],
+				"displayFields": [
+					"id",
+					"nome",
+					"dataNascimento",
+					"email",
+					"cpf",
+					"endereco",
+					"idFoto"
+				]
+			},
+			"advancedSearch": {
+				"searchFields": [
+					{
+						"name": "id",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "nome",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "dataNascimento",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "email",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "cpf",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "endereco",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "idFoto",
+						"optional": true,
+						"multiple": false
+					}
+				],
+				"displayFields": [
+					"id",
+					"nome",
+					"dataNascimento",
+					"email",
+					"cpf",
+					"endereco",
+					"idFoto"
+				]
+			}
+		},
+		"funcionario": {
+			"id": "id",
+			"name": "funcionario",
+			"customizable": false,
+			"slots": {
+				"id": {
+					"name": "id",
+					"type": "string",
+					"format": "uuid",
+					"optional": true,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": true
+				},
+				"nome": {
+					"name": "nome",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"dataNascimento": {
+					"name": "dataNascimento",
+					"type": "date",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"email": {
+					"name": "email",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"cpf": {
+					"name": "cpf",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"endereco": {
+					"name": "endereco",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"nomeUsuario": {
+					"name": "nomeUsuario",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"senha": {
+					"name": "senha",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"tipo": {
+					"name": "tipo",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"salario": {
+					"name": "salario",
+					"type": "double",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"idFoto": {
+					"name": "idFoto",
+					"type": "string",
+					"optional": true,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				}
+			},
+			"lookup": {
+				"searchFields": [
+					{
+						"name": "id",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "nome",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "dataNascimento",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "email",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "cpf",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "endereco",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "nomeUsuario",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "senha",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "tipo",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "salario",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "idFoto",
+						"optional": true,
+						"multiple": false
+					}
+				],
+				"displayFields": [
+					"id",
+					"nome",
+					"dataNascimento",
+					"email",
+					"cpf",
+					"endereco",
+					"nomeUsuario",
+					"senha",
+					"tipo",
+					"salario",
+					"idFoto"
+				]
+			},
+			"advancedSearch": {
+				"searchFields": [
+					{
+						"name": "id",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "nome",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "dataNascimento",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "email",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "cpf",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "endereco",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "nomeUsuario",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "senha",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "tipo",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "salario",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "idFoto",
+						"optional": true,
+						"multiple": false
+					}
+				],
+				"displayFields": [
+					"id",
+					"nome",
+					"dataNascimento",
+					"email",
+					"cpf",
+					"endereco",
+					"nomeUsuario",
+					"senha",
+					"tipo",
+					"salario",
+					"idFoto"
+				]
+			}
+		},
+		"servico": {
+			"id": "id",
+			"name": "servico",
+			"customizable": false,
+			"slots": {
+				"id": {
+					"name": "id",
+					"type": "string",
+					"format": "uuid",
+					"optional": true,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": true
+				},
+				"descricao": {
+					"name": "descricao",
+					"type": "string",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				},
+				"valor": {
+					"name": "valor",
+					"type": "double",
+					"optional": false,
+					"hidden": false,
+					"multivalued": false,
+					"readOnly": false
+				}
+			},
+			"lookup": {
+				"searchFields": [
+					{
+						"name": "id",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "descricao",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "valor",
+						"optional": true,
+						"multiple": false
+					}
+				],
+				"displayFields": [
+					"id",
+					"descricao",
+					"valor"
+				]
+			},
+			"advancedSearch": {
+				"searchFields": [
+					{
+						"name": "id",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "descricao",
+						"optional": true,
+						"multiple": false
+					},
+					{
+						"name": "valor",
+						"optional": true,
+						"multiple": false
+					}
+				],
+				"displayFields": [
+					"id",
+					"descricao",
+					"valor"
+				]
+			}
+		}
+	},
+	"translations": {
+		"furb.basico.cliente": "Entidade que representa o cliente",
+		"furb.basico.cliente_id": "Chave primaria",
+		"furb.basico.cliente_nome": "Nome do cliente",
+		"furb.basico.cliente_data_nascimento": "Data de nascimento",
+		"furb.basico.cliente_email": "Emal",
+		"furb.basico.cliente_cpf": "CPF do cliente",
+		"furb.basico.cliente_endereco": "Endereco",
+		"furb.basico.cliente_id_foto": "id da foto",
+		"furb.basico.funcionario": "cliente entidade",
+		"furb.basico.funcionario_id": "chave",
+		"furb.basico.funcionario_nome": "nome",
+		"furb.basico.funcionario_data_nascimento": "data nascimento",
+		"furb.basico.funcionario_email": "email",
+		"furb.basico.funcionario_cpf": "cpf",
+		"furb.basico.funcionario_endereco": "endereco",
+		"furb.basico.funcionario_nome_usuario": "nomeUsuario",
+		"furb.basico.funcionario_senha": "senha",
+		"furb.basico.funcionario_tipo": "flag tipo",
+		"furb.basico.funcionario_salario": "salario",
+		"furb.basico.funcionario_id_foto": "idFoto",
+		"furb.basico.servico": "Servico entidade",
+		"furb.basico.servico_id": "chave",
+		"furb.basico.servico_descricao": "descricao",
+		"furb.basico.servico_valor": "valor"
+	}
+}

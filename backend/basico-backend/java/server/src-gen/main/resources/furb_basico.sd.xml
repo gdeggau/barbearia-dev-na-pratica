@@ -43,11 +43,259 @@
                 <slot name="metadata" type="string" optional="false" multivalued="false"/>
             </output>
         </query>
+        <action name="importFregues" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="config" type="importConfig" optional="false" multivalued="false"/>
+            </input>
+            <output>
+                <slot name="importJobId" type="string" optional="false" multivalued="false"/>
+            </output>
+        </action>
+        <query name="exportFregues" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="config" type="exportConfig" optional="false" multivalued="false"/>
+            </input>
+            <output>
+                <slot name="exportJobId" type="string" optional="false" multivalued="false"/>
+            </output>
+        </query>
+        <action name="importFuncionario" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="config" type="importConfig" optional="false" multivalued="false"/>
+            </input>
+            <output>
+                <slot name="importJobId" type="string" optional="false" multivalued="false"/>
+            </output>
+        </action>
+        <query name="exportFuncionario" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="config" type="exportConfig" optional="false" multivalued="false"/>
+            </input>
+            <output>
+                <slot name="exportJobId" type="string" optional="false" multivalued="false"/>
+            </output>
+        </query>
+        <action name="importServico" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="config" type="importConfig" optional="false" multivalued="false"/>
+            </input>
+            <output>
+                <slot name="importJobId" type="string" optional="false" multivalued="false"/>
+            </output>
+        </action>
+        <query name="exportServico" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="config" type="exportConfig" optional="false" multivalued="false"/>
+            </input>
+            <output>
+                <slot name="exportJobId" type="string" optional="false" multivalued="false"/>
+            </output>
+        </query>
+        <action name="importAtendimento" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="config" type="importConfig" optional="false" multivalued="false"/>
+            </input>
+            <output>
+                <slot name="importJobId" type="string" optional="false" multivalued="false"/>
+            </output>
+        </action>
+        <query name="exportAtendimento" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="config" type="exportConfig" optional="false" multivalued="false"/>
+            </input>
+            <output>
+                <slot name="exportJobId" type="string" optional="false" multivalued="false"/>
+            </output>
+        </query>
+        <list name="listFregues" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="offset" type="integer" optional="false" multivalued="false"/>
+                <slot name="size" type="integer" optional="false" multivalued="false"/>
+                <slot name="orderBy" type="string" optional="false" multivalued="false"/>
+                <slot name="filter" type="string" optional="false" multivalued="false"/>
+                <slot name="displayFields" type="string" optional="false" multivalued="true"/>
+            </input>
+            <output>
+                <slot name="contents" type="fregues" optional="false" multivalued="true"/>
+            </output>
+        </list>
+        <list name="listFuncionario" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="offset" type="integer" optional="false" multivalued="false"/>
+                <slot name="size" type="integer" optional="false" multivalued="false"/>
+                <slot name="orderBy" type="string" optional="false" multivalued="false"/>
+                <slot name="filter" type="string" optional="false" multivalued="false"/>
+                <slot name="displayFields" type="string" optional="false" multivalued="true"/>
+            </input>
+            <output>
+                <slot name="contents" type="funcionario" optional="false" multivalued="true"/>
+            </output>
+        </list>
+        <list name="listServico" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="offset" type="integer" optional="false" multivalued="false"/>
+                <slot name="size" type="integer" optional="false" multivalued="false"/>
+                <slot name="orderBy" type="string" optional="false" multivalued="false"/>
+                <slot name="filter" type="string" optional="false" multivalued="false"/>
+                <slot name="displayFields" type="string" optional="false" multivalued="true"/>
+            </input>
+            <output>
+                <slot name="contents" type="servico" optional="false" multivalued="true"/>
+            </output>
+        </list>
+        <list name="listAtendimento" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="offset" type="integer" optional="false" multivalued="false"/>
+                <slot name="size" type="integer" optional="false" multivalued="false"/>
+                <slot name="orderBy" type="string" optional="false" multivalued="false"/>
+                <slot name="filter" type="string" optional="false" multivalued="false"/>
+                <slot name="displayFields" type="string" optional="false" multivalued="true"/>
+            </input>
+            <output>
+                <slot name="contents" type="atendimento" optional="false" multivalued="true"/>
+            </output>
+        </list>
         <query name="getDependencies" idempotent="false" extensionPoint="false" visibility="PUBLIC">
             <output>
                 <slot name="dependencies" type="dependency" optional="false" multivalued="true"/>
             </output>
         </query>
+        <create name="createFregues" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="fregues"/>
+            <output type="fregues"/>
+        </create>
+        <createBulk name="createBulkFregues" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="entities" type="fregues" optional="false" multivalued="true"/>
+            </input>
+            <output>
+            </output>
+        </createBulk>
+        <createMerge name="createMergeFregues" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="fregues"/>
+            <output type="fregues"/>
+        </createMerge>
+        <retrieve name="retrieveFregues" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="id" type="string" format="uuid" optional="false" multivalued="false"/>
+            </input>
+            <output type="fregues"/>
+        </retrieve>
+        <update name="updateFregues" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="fregues"/>
+            <output type="fregues"/>
+        </update>
+        <updateMerge name="updateMergeFregues" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="fregues"/>
+            <output type="fregues"/>
+        </updateMerge>
+        <delete name="deleteFregues" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="id" type="string" format="uuid" optional="false" multivalued="false"/>
+            </input>
+        </delete>
+        <create name="createFuncionario" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="funcionario"/>
+            <output type="funcionario"/>
+        </create>
+        <createBulk name="createBulkFuncionario" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="entities" type="funcionario" optional="false" multivalued="true"/>
+            </input>
+            <output>
+            </output>
+        </createBulk>
+        <createMerge name="createMergeFuncionario" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="funcionario"/>
+            <output type="funcionario"/>
+        </createMerge>
+        <retrieve name="retrieveFuncionario" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="id" type="string" format="uuid" optional="false" multivalued="false"/>
+            </input>
+            <output type="funcionario"/>
+        </retrieve>
+        <update name="updateFuncionario" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="funcionario"/>
+            <output type="funcionario"/>
+        </update>
+        <updateMerge name="updateMergeFuncionario" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="funcionario"/>
+            <output type="funcionario"/>
+        </updateMerge>
+        <delete name="deleteFuncionario" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="id" type="string" format="uuid" optional="false" multivalued="false"/>
+            </input>
+        </delete>
+        <create name="createServico" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="servico"/>
+            <output type="servico"/>
+        </create>
+        <createBulk name="createBulkServico" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="entities" type="servico" optional="false" multivalued="true"/>
+            </input>
+            <output>
+            </output>
+        </createBulk>
+        <createMerge name="createMergeServico" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="servico"/>
+            <output type="servico"/>
+        </createMerge>
+        <retrieve name="retrieveServico" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="id" type="string" format="uuid" optional="false" multivalued="false"/>
+            </input>
+            <output type="servico"/>
+        </retrieve>
+        <update name="updateServico" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="servico"/>
+            <output type="servico"/>
+        </update>
+        <updateMerge name="updateMergeServico" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="servico"/>
+            <output type="servico"/>
+        </updateMerge>
+        <delete name="deleteServico" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="id" type="string" format="uuid" optional="false" multivalued="false"/>
+            </input>
+        </delete>
+        <create name="createAtendimento" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="atendimento"/>
+            <output type="atendimento"/>
+        </create>
+        <createBulk name="createBulkAtendimento" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="entities" type="atendimento" optional="false" multivalued="true"/>
+            </input>
+            <output>
+            </output>
+        </createBulk>
+        <createMerge name="createMergeAtendimento" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="atendimento"/>
+            <output type="atendimento"/>
+        </createMerge>
+        <retrieve name="retrieveAtendimento" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="id" type="string" format="uuid" optional="false" multivalued="false"/>
+            </input>
+            <output type="atendimento"/>
+        </retrieve>
+        <update name="updateAtendimento" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="atendimento"/>
+            <output type="atendimento"/>
+        </update>
+        <updateMerge name="updateMergeAtendimento" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input type="atendimento"/>
+            <output type="atendimento"/>
+        </updateMerge>
+        <delete name="deleteAtendimento" idempotent="false" extensionPoint="false" visibility="PUBLIC">
+            <input>
+                <slot name="id" type="string" format="uuid" optional="false" multivalued="false"/>
+            </input>
+        </delete>
     </commands>
     <signals>
     </signals>
@@ -61,8 +309,84 @@
         <event name="notifyUserEvent" extensionPoint="false" visibility="PRIVATE">
             <payload type="notifyUserEventPayload"/>
         </event>
+        <event name="importFreguesEvent" extensionPoint="false" visibility="PUBLIC">
+            <payload>
+                <slot name="eventpl" type="importEventStatus" optional="false" multivalued="false"/>
+            </payload>
+        </event>
+        <event name="exportFreguesEvent" extensionPoint="false" visibility="PUBLIC">
+            <payload>
+                <slot name="eventpl" type="exportEventStatus" optional="false" multivalued="false"/>
+            </payload>
+        </event>
+        <event name="importFuncionarioEvent" extensionPoint="false" visibility="PUBLIC">
+            <payload>
+                <slot name="eventpl" type="importEventStatus" optional="false" multivalued="false"/>
+            </payload>
+        </event>
+        <event name="exportFuncionarioEvent" extensionPoint="false" visibility="PUBLIC">
+            <payload>
+                <slot name="eventpl" type="exportEventStatus" optional="false" multivalued="false"/>
+            </payload>
+        </event>
+        <event name="importServicoEvent" extensionPoint="false" visibility="PUBLIC">
+            <payload>
+                <slot name="eventpl" type="importEventStatus" optional="false" multivalued="false"/>
+            </payload>
+        </event>
+        <event name="exportServicoEvent" extensionPoint="false" visibility="PUBLIC">
+            <payload>
+                <slot name="eventpl" type="exportEventStatus" optional="false" multivalued="false"/>
+            </payload>
+        </event>
+        <event name="importAtendimentoEvent" extensionPoint="false" visibility="PUBLIC">
+            <payload>
+                <slot name="eventpl" type="importEventStatus" optional="false" multivalued="false"/>
+            </payload>
+        </event>
+        <event name="exportAtendimentoEvent" extensionPoint="false" visibility="PUBLIC">
+            <payload>
+                <slot name="eventpl" type="exportEventStatus" optional="false" multivalued="false"/>
+            </payload>
+        </event>
     </events>
     <records>
+        <record name="fregues">
+            <slot name="id" type="string" format="uuid" optional="true" multivalued="false"/>
+            <slot name="nome" type="string" optional="false" multivalued="false"/>
+            <slot name="dataNascimento" type="date" optional="false" multivalued="false"/>
+            <slot name="email" type="string" optional="false" multivalued="false"/>
+            <slot name="cpf" type="string" optional="true" multivalued="false"/>
+            <slot name="telefone" type="string" optional="true" multivalued="false"/>
+            <slot name="endereco" type="string" optional="false" multivalued="false"/>
+            <slot name="idFoto" type="string" optional="true" multivalued="false"/>
+        </record>
+        <record name="funcionario">
+            <slot name="id" type="string" format="uuid" optional="true" multivalued="false"/>
+            <slot name="nome" type="string" optional="false" multivalued="false"/>
+            <slot name="dataNascimento" type="date" optional="false" multivalued="false"/>
+            <slot name="email" type="string" optional="false" multivalued="false"/>
+            <slot name="cpf" type="string" optional="false" multivalued="false"/>
+            <slot name="endereco" type="string" optional="false" multivalued="false"/>
+            <slot name="nomeUsuario" type="string" optional="false" multivalued="false"/>
+            <slot name="senha" type="string" optional="false" multivalued="false"/>
+            <slot name="tipo" type="string" optional="false" multivalued="false"/>
+            <slot name="salario" type="double" optional="false" multivalued="false"/>
+            <slot name="idFoto" type="string" optional="true" multivalued="false"/>
+        </record>
+        <record name="servico">
+            <slot name="id" type="string" format="uuid" optional="true" multivalued="false"/>
+            <slot name="descricao" type="string" optional="false" multivalued="false"/>
+            <slot name="valor" type="double" optional="false" multivalued="false"/>
+        </record>
+        <record name="atendimento">
+            <slot name="id" type="string" format="uuid" optional="true" multivalued="false"/>
+            <slot name="fregues" type="fregues" optional="false" multivalued="false"/>
+            <slot name="funcionario" type="funcionario" optional="false" multivalued="false"/>
+            <slot name="dataAtendimento" type="date" optional="false" multivalued="false"/>
+            <slot name="valorTotal" type="double" optional="false" multivalued="false"/>
+            <slot name="servicos" type="servico" optional="false" multivalued="true"/>
+        </record>
         <record name="notifyUserEventPayload">
             <slot name="notificationClass" type="string" optional="true" multivalued="false"/>
             <slot name="notificationOrigin" type="string" optional="true" multivalued="false"/>
@@ -113,6 +437,75 @@
             <slot name="message" type="string" optional="true" multivalued="false"/>
             <slot name="errorCode" type="string" optional="true" multivalued="false"/>
         </record>
+        <record name="importError">
+            <slot name="errorType" type="errorType" optional="false" multivalued="false"/>
+            <slot name="lineNumber" type="integer" optional="false" multivalued="false"/>
+            <slot name="bean" type="string" optional="false" multivalued="false"/>
+            <slot name="message" type="string" optional="false" multivalued="false"/>
+            <slot name="exceptionClass" type="string" optional="false" multivalued="false"/>
+        </record>
+        <record name="fielddto">
+            <slot name="id" type="integer" optional="false" multivalued="false"/>
+            <slot name="name" type="string" optional="false" multivalued="false"/>
+            <slot name="fieldType" type="fieldType" optional="false" multivalued="false"/>
+            <slot name="start" type="integer" optional="true" multivalued="false"/>
+            <slot name="size" type="integer" optional="true" multivalued="false"/>
+            <slot name="maskPattern" type="string" optional="true" multivalued="false"/>
+        </record>
+        <record name="hookdto">
+            <slot name="hookFunction" type="hookFunction" optional="false" multivalued="false"/>
+            <slot name="script" type="string" optional="false" multivalued="false"/>
+        </record>
+        <record name="layoutdto">
+            <slot name="id" type="integer" optional="false" multivalued="false"/>
+            <slot name="description" type="string" optional="false" multivalued="false"/>
+            <slot name="fileFormat" type="fileFormat" optional="false" multivalued="false"/>
+            <slot name="errorStrategy" type="errorStrategy" optional="false" multivalued="false"/>
+            <slot name="delimiter" type="string" optional="true" multivalued="false"/>
+            <slot name="skipLines" type="integer" optional="false" multivalued="false"/>
+            <slot name="fields" type="fielddto" optional="false" multivalued="true"/>
+            <slot name="hooks" type="hookdto" optional="true" multivalued="true"/>
+        </record>
+        <record name="importReport">
+            <slot name="id" type="string" optional="false" multivalued="false"/>
+            <slot name="startTime" type="dateTime" optional="false" multivalued="false"/>
+            <slot name="endTime" type="dateTime" optional="false" multivalued="false"/>
+            <slot name="uri" type="string" optional="false" multivalued="false"/>
+            <slot name="beanClass" type="string" optional="false" multivalued="false"/>
+            <slot name="serviceClass" type="string" optional="false" multivalued="false"/>
+            <slot name="layout" type="layoutdto" optional="false" multivalued="false"/>
+            <slot name="sucessCount" type="integer" optional="false" multivalued="false"/>
+            <slot name="errorsCount" type="integer" optional="false" multivalued="false"/>
+            <slot name="filteredCount" type="integer" optional="false" multivalued="false"/>
+            <slot name="skippedCount" type="integer" optional="false" multivalued="false"/>
+            <slot name="importErrors" type="importError" optional="true" multivalued="true"/>
+        </record>
+        <record name="exportEventStatus">
+            <slot name="importerId" type="string" optional="false" multivalued="false"/>
+            <slot name="eventType" type="eventType" optional="false" multivalued="false"/>
+            <slot name="recordCount" type="integer" optional="false" multivalued="false"/>
+        </record>
+        <record name="importEventStatus">
+            <slot name="importerId" type="string" optional="false" multivalued="false"/>
+            <slot name="eventType" type="eventType" optional="false" multivalued="false"/>
+            <slot name="status" type="status" optional="false" multivalued="false"/>
+            <slot name="errorMessage" type="string" optional="true" multivalued="false"/>
+            <slot name="recordCount" type="integer" optional="false" multivalued="false"/>
+            <slot name="importReport" type="importReport" optional="true" multivalued="false"/>
+        </record>
+        <record name="exportConfig">
+            <slot name="uri" type="string" optional="false" multivalued="false"/>
+            <slot name="layout" type="layoutdto" optional="false" multivalued="false"/>
+            <slot name="async" type="boolean" optional="false" multivalued="false"/>
+            <slot name="errorStrategy" type="string" optional="false" multivalued="false"/>
+        </record>
+        <record name="importConfig">
+            <slot name="uri" type="string" optional="false" multivalued="false"/>
+            <slot name="layout" type="layoutdto" optional="false" multivalued="false"/>
+            <slot name="async" type="boolean" optional="false" multivalued="false"/>
+            <slot name="batchSize" type="integer" optional="false" multivalued="false"/>
+            <slot name="errorStrategy" type="errorStrategy" optional="false" multivalued="false"/>
+        </record>
         <record name="dependency">
             <slot name="domain" type="string" optional="false" multivalued="false"/>
             <slot name="service" type="string" optional="false" multivalued="false"/>
@@ -137,6 +530,54 @@
         <enumeration name="eventEmailFormat">
             <value name="HTML"/>
             <value name="PLAIN_TEXT"/>
+        </enumeration>
+        <enumeration name="fieldType">
+            <value name="BINARY"/>
+            <value name="BOOLEAN"/>
+            <value name="DATE"/>
+            <value name="DATETIME"/>
+            <value name="DOUBLE"/>
+            <value name="ENUM"/>
+            <value name="INTEGER"/>
+            <value name="MONEY"/>
+            <value name="STRING"/>
+            <value name="TIME"/>
+        </enumeration>
+        <enumeration name="fileFormat">
+            <value name="CSV"/>
+            <value name="FLAT"/>
+            <value name="JSON"/>
+            <value name="XML"/>
+        </enumeration>
+        <enumeration name="hookFunction">
+            <value name="BEFORE_PARSE"/>
+            <value name="BEFORE_CONVERSION"/>
+            <value name="ON_ERROR"/>
+            <value name="VALIDATE"/>
+        </enumeration>
+        <enumeration name="eventType">
+            <value name="CHUNK"/>
+            <value name="DOWNLOAD"/>
+            <value name="ERROR"/>
+            <value name="FINISH"/>
+            <value name="START"/>
+        </enumeration>
+        <enumeration name="errorStrategy">
+            <value name="CALL_SCRIPT"/>
+            <value name="IGNORE"/>
+            <value name="STOP"/>
+        </enumeration>
+        <enumeration name="status">
+            <value name="DONE"/>
+            <value name="DONE_WITH_ERRORS"/>
+            <value name="DOWNLOADING"/>
+            <value name="ERROR"/>
+            <value name="NOT_STARTED"/>
+            <value name="RUNNING"/>
+        </enumeration>
+        <enumeration name="errorType">
+            <value name="CONVERT_ERROR"/>
+            <value name="SERVICE_ERROR"/>
         </enumeration>
     </enumerations>
 </service>

@@ -8,6 +8,18 @@ entities {
 
 service basico {
 	entities{
-        
+        entity atendimento{
+        	relationships{
+        		ManyToOne(fregues){
+        			type: aggregation
+        		}
+        		ManyToOne(funcionario){
+        			type: aggregation
+        		}
+        		OneToMany(servicos){
+        			type: aggregation
+        		}
+        	}
+        }
     }
 }
