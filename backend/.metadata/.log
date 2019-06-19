@@ -1,0 +1,58 @@
+!SESSION 2019-06-18 20:59:17.873 -----------------------------------------------
+eclipse.buildId=4.10.0.I20181206-0815
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-18 20:59:37.349
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\f0fp862'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-06-18 21:00:06.329
+!MESSAGE Failure to transfer br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from http://maven.senior.com.br:8081/artifactory/libs-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of snapshots has elapsed or updates are forced. Original error: Could not transfer metadata br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from/to snapshots (http://maven.senior.com.br:8081/artifactory/libs-snapshot): maven.senior.com.br
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-06-18 21:00:06.333
+!MESSAGE Failure to transfer br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from http://maven.senior.com.br:8081/artifactory/libs-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of snapshots has elapsed or updates are forced. Original error: Could not transfer metadata br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from/to snapshots (http://maven.senior.com.br:8081/artifactory/libs-snapshot): maven.senior.com.br
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-06-18 21:00:12.517
+!MESSAGE Failure to transfer br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from http://maven.senior.com.br:8081/artifactory/libs-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of snapshots has elapsed or updates are forced. Original error: Could not transfer metadata br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from/to snapshots (http://maven.senior.com.br:8081/artifactory/libs-snapshot): maven.senior.com.br
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-06-18 21:00:12.520
+!MESSAGE Failure to transfer br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from http://maven.senior.com.br:8081/artifactory/libs-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of snapshots has elapsed or updates are forced. Original error: Could not transfer metadata br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from/to snapshots (http://maven.senior.com.br:8081/artifactory/libs-snapshot): maven.senior.com.br
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-06-18 21:00:19.498
+!MESSAGE Failure to transfer br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from http://maven.senior.com.br:8081/artifactory/libs-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of snapshots has elapsed or updates are forced. Original error: Could not transfer metadata br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from/to snapshots (http://maven.senior.com.br:8081/artifactory/libs-snapshot): maven.senior.com.br
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-06-18 21:00:19.500
+!MESSAGE Failure to transfer br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from http://maven.senior.com.br:8081/artifactory/libs-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of snapshots has elapsed or updates are forced. Original error: Could not transfer metadata br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from/to snapshots (http://maven.senior.com.br:8081/artifactory/libs-snapshot): maven.senior.com.br
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-06-18 21:00:22.465
+!MESSAGE Failure to transfer br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from http://maven.senior.com.br:8081/artifactory/libs-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of snapshots has elapsed or updates are forced. Original error: Could not transfer metadata br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from/to snapshots (http://maven.senior.com.br:8081/artifactory/libs-snapshot): maven.senior.com.br
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-06-18 21:00:22.469
+!MESSAGE Failure to transfer br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from http://maven.senior.com.br:8081/artifactory/libs-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of snapshots has elapsed or updates are forced. Original error: Could not transfer metadata br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from/to snapshots (http://maven.senior.com.br:8081/artifactory/libs-snapshot): maven.senior.com.br
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-06-18 21:01:02.717
+!MESSAGE Could not transfer metadata br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from/to snapshots (http://maven.senior.com.br:8081/artifactory/libs-snapshot): maven.senior.com.br
+!SESSION 2019-06-18 21:01:38.432 -----------------------------------------------
+eclipse.buildId=4.10.0.I20181206-0815
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-18 21:01:54.153
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\f0fp862'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-06-18 21:02:22.396
+!MESSAGE Could not transfer metadata br.com.senior.furb:furb-basico-client:develop-SNAPSHOT/maven-metadata.xml from/to snapshots (http://maven.senior.com.br:8081/artifactory/libs-snapshot): maven.senior.com.br

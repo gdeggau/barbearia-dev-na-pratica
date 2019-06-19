@@ -1,0 +1,40 @@
+properties furb.basico {	
+	version: "3.0.0"
+	
+ 	property db.url {
+ 		scope: service
+		master: true
+ 		level: infra
+ 		type: string
+ 		label: "Url de conexão da base de dados."
+ 		required: true
+ 	}
+	 	
+ 	property db.username {
+ 		scope: service
+		master: true
+ 		level: infra
+ 		type: string
+ 		label: "Usuário de conexão com a base de dados."
+ 		required: true
+ 	}
+ 	
+ 	property db.password {
+ 		scope: service
+		master: true
+ 		level: infra
+ 		type: string
+ 		label: "Senha de conexão com a base de dados."
+ 		required: true
+ 	}
+ 	
+ 	property db.schema.name {
+ 		scope: service
+		master: true
+ 		level: infra
+ 		type: string
+ 		label: "Nome do schema."
+ 		required: false
+ 	}
+	
+}

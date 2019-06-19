@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<!--
+	
+	This is a generated file. DO NOT EDIT ANY CODE HERE, YOUR CHANGES WILL BE LOST.
+	
+	You are welcome to make changes to the pom.xml under the impl/ directory. 
+	
+	-->
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>furb-basico-parent</artifactId>
+	<groupId>br.com.senior.furb</groupId>
+	<version>develop-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>furb-basico</name>
+	<description>furb-basico</description>
+	<organization>
+		<name>Senior Sistemas S.A.</name>
+		<url>http://www.senior.com.br</url>
+	</organization>
+	<developers>
+	<developer>
+		<name>Senior Sistemas</name>
+	</developer>
+	</developers>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<messaging-api-version>3.17.0</messaging-api-version>
+		<service-model-version>7.27.2</service-model-version>
+		<hibernate-version>5.2.17.Final</hibernate-version>
+		<customspringodata-version>1.0.2</customspringodata-version>
+		<springbatchintegration-version>1.0.0</springbatchintegration-version>
+		<customization-service-client-version>3.5.0</customization-service-client-version>
+		<translation-hub-api-version>2.3.1</translation-hub-api-version>
+		<httpclient-version>4.5.2</httpclient-version>
+		<security-api-version>0.9.5.2</security-api-version>
+		<service-model-custom-data-version>1.1.0</service-model-custom-data-version>
+	</properties>
+	<modules>
+		<module>client</module>
+		<module>server</module>
+		<module>impl</module>
+	</modules>
+	<distributionManagement>
+		<repository>
+			<id>senior-release</id>
+			<name>maven-releases</name>
+			<url>http://maven.senior.com.br:8081/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>senior-snapshot</id>
+			<name>maven-snapshots</name>
+			<url>http://maven.senior.com.br:8081/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>libs-release</name>
+			<url>http://maven.senior.com.br:8081/artifactory/libs-release</url>
+		</repository>
+		<repository>
+			<snapshots/>
+				<id>snapshots</id>
+				<name>libs-snapshot</name>
+				<url>http://maven.senior.com.br:8081/artifactory/libs-snapshot</url>
+		</repository>
+	</repositories>
+	<build>
+		<defaultGoal>install</defaultGoal>
+		<plugins>
+			<!-- Geração do jar dos sources -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

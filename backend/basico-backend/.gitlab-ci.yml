@@ -1,0 +1,97 @@
+stages:
+  - build
+  - deploy
+  - release
+  - sonar
+
+.default_tags: &default_tags
+  tags:
+    - backend
+    - java
+
+build:
+  <<: *default_tags
+  stage: build
+  script:
+    - bash senior-ci/java/sdl/scripts/ci.sh -b
+
+releaseSnapshot:
+  <<: *default_tags
+  stage: release
+  when: manual
+  script:
+    - bash senior-ci/java/sdl/scripts/ci.sh -s $CI_COMMIT_REF_SLUG
+  except:
+    - master
+    - tags
+
+releasePatch:
+  <<: *default_tags
+  stage: release
+  when: manual
+  script:
+    - bash senior-ci/java/sdl/scripts/ci.sh -r patch
+  only:
+    - develop
+
+releaseMinor:
+  <<: *default_tags
+  stage: release
+  when: manual
+  script:
+    - bash senior-ci/java/sdl/scripts/ci.sh -r minor
+  only:
+    - develop
+
+releaseMajor:
+  <<: *default_tags
+  stage: release
+  when: manual
+  script:
+    - bash senior-ci/java/sdl/scripts/ci.sh -r major
+  only:
+    - develop
+
+package:
+  <<: *default_tags
+  stage: release
+  script:
+    - bash senior-ci/java/sdl/scripts/ci.sh -p
+  only:
+    - tags
+    - /^v?\d+\-\d+\-\d+\z/
+  except:
+    - master
+    - branches
+
+deploy:
+  <<: *default_tags
+  stage: deploy
+  when: manual
+  script:
+    - bash senior-ci/java/sdl/scripts/ci.sh -k
+  variables:
+    DEPLOYMENT: basico
+  environment:
+    name: pcbnu002694.interno.senior.com.br
+    url: http://pcbnu002694.interno.senior.com.br:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/deployment/$SCI_NAMESPACE/basico?namespace=$SCI_NAMESPACE
+
+sendInfoSonarQube:
+  <<: *default_tags
+  stage: sonar
+  script:
+    - bash senior-ci/java/sdl/scripts/ci.sh -x $CI_PROJECT_ID
+  only:
+    - master
+  allow_failure: false
+
+analysisSonarQube:
+  <<: *default_tags
+  stage: sonar
+  script:
+    - bash senior-ci/java/sdl/scripts/ci.sh -z $CI_PROJECT_NAME $CI_PROJECT_ID $CI_BUILD_REF $CI_BUILD_REF_NAME
+  except:
+    - master
+    - develop
+  allow_failure: true
+    

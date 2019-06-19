@@ -1,0 +1,8 @@
+FROM seniorsistemas/platform:1.0.0
+COPY . #INSTALL_DIR#
+COPY ./supervisord.conf /etc/
+RUN locale-gen pt_BR.UTF-8  
+ENV LANG pt_BR.UTF-8  
+ENV LANGUAGE pt_BR:en  
+ENV LC_ALL pt_BR.UTF-8 
+ENTRYPOINT ["supervisord", "-c", "/etc/supervisord.conf"]

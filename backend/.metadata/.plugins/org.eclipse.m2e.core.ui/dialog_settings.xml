@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\f0fp862\Documents\Graduacao\7 Semestre\Dev na pratica\trabalho final\backend\basico-backend"/>
+			<item value="C:\Users\f0fp862\Documents\Graduacao\7 Semestre\Dev na pratica\trabalho final\backend\basico-backend\java\client"/>
+			<item value="C:\Users\f0fp862\Documents\Graduacao\7 Semestre\Dev na pratica\trabalho final\backend\basico-backend\java\impl"/>
+			<item value="C:\Users\f0fp862\Documents\Graduacao\7 Semestre\Dev na pratica\trabalho final\backend\basico-backend\java\server"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

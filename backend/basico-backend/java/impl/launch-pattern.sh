@@ -1,0 +1,1 @@
+java $JAVA_OPTS -jar ./#ARTIFACT_NAME#-jar-with-dependencies.jar

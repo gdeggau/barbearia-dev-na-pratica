@@ -1,0 +1,83 @@
+{
+  "domain": "furb",
+  "service": "basico",
+  "description": "Furb - Básico",
+  "resources": [
+		{
+			"name": "cliente",
+			"label": "usuarios.userManager.furb_basico_entities_cliente_label",
+			"description": "usuarios.userManager.furb_basico_entities_cliente_description",
+			"URI": "res://senior.com.br/furb/basico/entities/cliente",
+			"actions" : [
+			    {
+			    	"name": "Incluir",
+			    	"label": "usuarios.userManager.furb_basico_entities_cliente_action_incluir_label"
+			    },
+			    {
+			    	"name": "Editar",
+			    	"label": "usuarios.userManager.furb_basico_entities_cliente_action_editar_label"
+			    },
+			    {
+			    	"name": "Excluir",
+			    	"label": "usuarios.userManager.furb_basico_entities_cliente_action_excluir_label"
+			    },
+			    {
+			    	"name": "Visualizar",
+			    	"label": "usuarios.userManager.furb_basico_entities_cliente_action_visualizar_label"
+			    }
+			]
+		},
+		{
+			"name": "item",
+			"label": "usuarios.userManager.furb_basico_entities_item_label",
+			"description": "usuarios.userManager.furb_basico_entities_item_description",
+			"URI": "res://senior.com.br/furb/basico/entities/item",
+			"actions" : [
+			    {
+			    	"name": "Incluir",
+			    	"label": "usuarios.userManager.furb_basico_entities_item_action_incluir_label"
+			    },
+			    {
+			    	"name": "Editar",
+			    	"label": "usuarios.userManager.furb_basico_entities_item_action_editar_label"
+			    },
+			    {
+			    	"name": "Excluir",
+			    	"label": "usuarios.userManager.furb_basico_entities_item_action_excluir_label"
+			    },
+			    {
+			    	"name": "Visualizar",
+			    	"label": "usuarios.userManager.furb_basico_entities_item_action_visualizar_label"
+			    }
+			]
+		},
+		{
+			"name": "pedido",
+			"label": "usuarios.userManager.furb_basico_entities_pedido_label",
+			"description": "usuarios.userManager.furb_basico_entities_pedido_description",
+			"URI": "res://senior.com.br/furb/basico/entities/pedido",
+			"actions" : [
+			    {
+			    	"name": "Incluir",
+			    	"label": "usuarios.userManager.furb_basico_entities_pedido_action_incluir_label"
+			    },
+			    {
+			    	"name": "Editar",
+			    	"label": "usuarios.userManager.furb_basico_entities_pedido_action_editar_label"
+			    },
+			    {
+			    	"name": "Excluir",
+			    	"label": "usuarios.userManager.furb_basico_entities_pedido_action_excluir_label"
+			    },
+			    {
+			    	"name": "Visualizar",
+			    	"label": "usuarios.userManager.furb_basico_entities_pedido_action_visualizar_label"
+			    }
+			]
+		}
+  ],
+  "filterFields": [
+  ],
+  "customFilters": [
+  ]
+}
