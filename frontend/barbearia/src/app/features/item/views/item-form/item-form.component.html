@@ -1,0 +1,45 @@
+<div class=" ui-g-12 ui-md-12 ui-lg-12 ui-xl-12">
+  <p-toast [style]="{marginTop: '80px'}" position="top-right" key="form-toast"></p-toast>
+  <p-card class="centralized">
+    <p-header class="header-card-form">
+      <div class="ui-helper-clearfix title-card-header">
+        <span class="ui-panel-title">Adicionar novo item</span>
+      </div>
+    </p-header>
+  <form [formGroup]="itemForm" >
+    <div class="">
+      <div class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-12 ui-lg-12">
+          <label class="required" for="descricao">Descricao:</label>
+          <div class="ui-inputgroup">
+            <input #descricaoFormInput type="text" id="descricao" name="descricao" pInputText formControlName="descricao" autocomplete="off" placeholder="Ex: Item tal"/>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label for="quantidade">Quantidade</label>
+          <i *ngIf="outOfDate" pTooltip="Produto Vencido!" tooltipPosition="top" class="pi pi-calendar-times outOfDate"></i>
+          <div class="ui-inputgroup">
+            <input #quantidadeFormInput type="number" id="quantidade" name="quantidade" pInputText formControlName="quantidade" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label for="valorUnitario">Valor Unitario</label>
+          <div class="ui-inputgroup">
+            <input #valorUnitarioFormInput type="number" id="valorUnitario" name="valorUnitario" pInputText formControlName="valorUnitario" autocomplete="off" />
+          </div>
+        </div>
+
+      </div>
+      <p-footer>
+        <div class="group-button">
+          <button pButton type="button" (click)="onSave()" label="Salvar" class="ui-button-raised ui-button-success"></button>
+          <button pButton type="button" (click)="onCancel()" label="Cancelar" class="ui-button-raised ui-button-danger"></button>
+        </div>
+      </p-footer>
+    </div>
+  </form>
+</p-card>
+</div>
+

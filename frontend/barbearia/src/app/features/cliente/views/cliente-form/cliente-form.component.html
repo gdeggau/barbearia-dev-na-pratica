@@ -1,0 +1,60 @@
+<div class=" ui-g-12 ui-md-12 ui-lg-12 ui-xl-12">
+  <p-toast [style]="{marginTop: '80px'}" position="top-right" key="form-toast"></p-toast>
+  <p-card class="centralized">
+    <p-header class="header-card-form">
+      <div class="ui-helper-clearfix title-card-header">
+        <span class="ui-panel-title">Adicionar novo cliente</span>
+      </div>
+    </p-header>
+  <form [formGroup]="clienteForm" >
+    <div class="">
+      <div class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-12 ui-lg-12">
+          <label class="required" for="itemName">Nome do Cliente:</label>
+          <div class="ui-inputgroup">
+            <input #nomeFormInput type="text" id="nome" name="nome" pInputText formControlName="nome" autocomplete="off" placeholder="Ex: Fulano de tal"/>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label for="itemName">Data de Nascimento</label>
+          <i *ngIf="outOfDate" pTooltip="Produto Vencido!" tooltipPosition="top" class="pi pi-calendar-times outOfDate"></i>
+          <div class="ui-inputgroup">
+            <p-calendar formControlName="dataNascimento" dateFormat="dd/mm/yy"></p-calendar>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label class="required" for="itemName">Credito habilitado:</label>
+          <div class="ui-inputgroup">
+            <div class="radio-align">
+              <div class="ui-g-12">
+                <p-radioButton name="creditoHabilitado" value="true" label="Sim" formControlName="creditoHabilitado"></p-radioButton>
+              </div>
+              <div class="ui-g-12">
+                <p-radioButton name="creditoHabilitado" value="false" label="Não" formControlName="creditoHabilitado"></p-radioButton>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label for="itemName">CPF</label>
+          <i *ngIf="outOfDate" pTooltip="Produto Vencido!" tooltipPosition="top" class="pi pi-calendar-times outOfDate"></i>
+          <div class="ui-inputgroup">
+            <input #cpfFormInput type="text" id="cpf" name="cpf" pInputText formControlName="cpf" autocomplete="off" placeholder="Ex: 012.227.992-19"/>
+          </div>
+        </div>
+
+      </div>
+      <p-footer>
+        <div class="group-button">
+          <button pButton type="button" (click)="onSave()" label="Salvar" class="ui-button-raised ui-button-success"></button>
+          <button pButton type="button" (click)="onCancel()" label="Cancelar" class="ui-button-raised ui-button-danger"></button>
+        </div>
+      </p-footer>
+    </div>
+  </form>
+</p-card>
+</div>
+

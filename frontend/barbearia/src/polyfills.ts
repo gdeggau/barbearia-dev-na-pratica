@@ -56,6 +56,17 @@
  * Zone JS is required by default for Angular itself.
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
+import 'core-js/es6';
+import 'core-js/es7/reflect';
+import 'zone.js/dist/zone';
+/*{CA:PACKAGE_IMPORTS:START}*/
+/*{CA:PACKAGE_IMPORTS:END}*/
+
+/*{CA:PROJECT_IMPORTS:START}*/
+/*{CA:PROJECT_IMPORTS:END}*/
+
+// Necessary for IE10
+
 
 
 /***************************************************************************************************

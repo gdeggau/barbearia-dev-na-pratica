@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "barbearia": {
+    "dev-na-pratica-basico": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/barbearia",
+            "outputPath": "dist/dev-na-pratica-basico",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,8 +26,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "node_modules/font-awesome/css/font-awesome.min.css",
+            "styles": ["node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -63,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "barbearia:build"
+            "browserTarget": "dev-na-pratica-basico:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "barbearia:build:production"
+              "browserTarget": "dev-na-pratica-basico:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "barbearia:build"
+            "browserTarget": "dev-na-pratica-basico:build"
           }
         },
         "test": {
@@ -108,7 +107,7 @@
         }
       }
     },
-    "barbearia-e2e": {
+    "dev-na-pratica-basico-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -117,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "barbearia:serve"
+            "devServerTarget": "dev-na-pratica-basico:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "barbearia:serve:production"
+              "devServerTarget": "dev-na-pratica-basico:serve:production"
             }
           }
         },
@@ -137,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "barbearia"
+  "defaultProject": "dev-na-pratica-basico"
 }

@@ -1,29 +1,22 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-      "baseUrl": "./",
-      "outDir": "./dist/out-tsc",
-      "sourceMap": true,
-      "declaration": false,
-      "moduleResolution": "node",
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "noImplicitAny": true,
-      "suppressImplicitAnyIndexErrors": true,
-      "target": "es5",
-      "typeRoots": ["node_modules/@types"],
-      "lib": ["es2017", "dom"],
-      "paths": {
-          "~root/*": ["./*"],
-          "~e2e/*": ["e2e/*"],
-          "~src/*": ["src/*"],
-          "~app/*": ["src/app/*"],
-          "~core/*": ["src/app/core/*"],
-          "~features/*": ["src/app/features/*"],
-          "~shared/*": ["src/app/shared/*"],
-          "~static/*": ["src/static/*"],
-          "~environments/*": ["src/environments/*"]
-      },
-      "module": "commonjs"
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ]
   }
 }
