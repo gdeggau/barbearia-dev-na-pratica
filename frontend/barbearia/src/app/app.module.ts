@@ -13,8 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GrowlModule } from 'primeng/growl';
 import {
-    HttpInterceptorModule,
-    CyclicJsonInterceptorModule,
     LocaleModule,
     RestUrl,
     BreadcrumbModule,
@@ -36,7 +34,6 @@ import { MessageService } from 'primeng/components/common/messageservice';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    CyclicJsonInterceptorModule,
     LocaleModule.forRoot(),
     BreadcrumbModule,
     LoadingStateModule,
