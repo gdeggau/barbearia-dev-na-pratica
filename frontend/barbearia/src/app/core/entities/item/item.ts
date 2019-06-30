@@ -12,8 +12,8 @@ export class Item {
     public lastModifiedDate?: Date;
     public custom?: any;
 
-    public static fromDto(clienteDto: ItemDto, originEntity?: string): Item {
-        const model: any = { ...clienteDto };
+    public static fromDto(freguesDto: ItemDto, originEntity?: string): Item {
+        const model: any = { ...freguesDto };
 
         model.createdDate = model.createdDate && moment(model.createdDate).toDate();
         model.lastModifiedDate = model.lastModifiedDate && moment(model.lastModifiedDate).toDate();
@@ -21,8 +21,8 @@ export class Item {
         return model as Item;
     }
 
-    public static toDto(cliente: Item, originEntity?: string): Item {
-        const dto: any = { ...cliente };
+    public static toDto(fregues: Item, originEntity?: string): Item {
+        const dto: any = { ...fregues };
 
         dto.createdDate = dto.createdDate && moment(dto.createdDate).format();
         dto.lastModifiedDate = dto.lastModifiedDate && moment(dto.lastModifiedDate).format();

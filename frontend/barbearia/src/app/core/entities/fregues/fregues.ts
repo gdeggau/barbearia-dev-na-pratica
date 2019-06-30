@@ -1,12 +1,14 @@
 import * as moment from 'moment';
-import { ClienteDto } from './cliente-dto';
+import { FreguesDto } from './fregues-dto';
 
-export class Cliente {
+export class Fregues {
     public id?: string;
     public nome: string;
     public dataNascimento: string;
-    public creditoHabilitado: string;
+    public email: string;
     public cpf: string;
+    public telefone: string;
+    public endereco: string;
     public idFoto: string;
     public createdBy?: string;
     public createdDate?: Date;
@@ -14,18 +16,18 @@ export class Cliente {
     public lastModifiedDate?: Date;
     public custom?: any;
 
-    public static fromDto(clienteDto: ClienteDto, originEntity?: string): Cliente {
-        const model: any = { ...clienteDto };
+    public static fromDto(freguesDto: FreguesDto, originEntity?: string): Fregues {
+        const model: any = { ...freguesDto };
 
         model.dataNascimento = model.dataNascimento && moment(model.dataNascimento).toDate();
         model.createdDate = model.createdDate && moment(model.createdDate).toDate();
         model.lastModifiedDate = model.lastModifiedDate && moment(model.lastModifiedDate).toDate();
 
-        return model as Cliente;
+        return model as Fregues;
     }
 
-    public static toDto(cliente: Cliente, originEntity?: string): ClienteDto {
-        const dto: any = { ...cliente };
+    public static toDto(fregues: Fregues, originEntity?: string): FreguesDto {
+        const dto: any = { ...fregues };
 
         dto.dataNascimento = dto.dataNascimento && moment(dto.dataNascimento).format('YYYY-MM-DD');
         dto.createdDate = dto.createdDate && moment(dto.createdDate).format();

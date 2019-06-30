@@ -9,8 +9,20 @@ export class SideNavComponent implements OnInit {
 
   items = [
     {
-      label: 'Cliente',
-      routerLink: '/clientes'
+      label: 'Freguês',
+      routerLink: '/fregueses'
+    },
+    {
+      label: 'Funcionário',
+      routerLink: '/funcionarios'
+    },
+    {
+      label: 'Serviço',
+      routerLink: '/servicos'
+    },
+    {
+      label: 'Atendimento',
+      routerLink: '/atendimentos'
     },
     {
       label: 'Items',

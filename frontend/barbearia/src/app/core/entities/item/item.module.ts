@@ -8,7 +8,7 @@ import { ItemService } from './item.service';
             {
                 name: 'item',
                 actions: ['Visualizar', 'Incluir', 'Editar', 'Excluir'],
-                uri: `res://senior.com.br/erpx_arq/acme/entities/cliente`,
+                uri: `res://senior.com.br/erpx_arq/acme/entities/fregues`,
             },
         ]),
     ],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteService } from 'src/app/core/entities/cliente/cliente.service';
+import { FreguesService } from 'src/app/core/entities/fregues/fregues.service';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { Item } from 'src/app/core/entities/item/item';
 import { ItemService } from 'src/app/core/entities/item/item.service';
 
 @Component({
-  selector: 'app-cliente-list',
+  selector: 'app-fregues-list',
   templateUrl: './item-list.component.html',
 })
 export class ItemListComponent implements OnInit {

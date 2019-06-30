@@ -3,46 +3,51 @@
   <p-card class="centralized">
     <p-header class="header-card-form">
       <div class="ui-helper-clearfix title-card-header">
-        <span class="ui-panel-title">Adicionar novo cliente</span>
+        <span class="ui-panel-title">Adicionar novo freguês</span>
       </div>
     </p-header>
-  <form [formGroup]="clienteForm" >
+  <form [formGroup]="freguesForm" >
     <div class="">
       <div class="ui-g ui-fluid">
         <div class="ui-g-12 ui-md-12 ui-lg-12">
-          <label class="required" for="itemName">Nome do Cliente:</label>
+          <label class="required" for="itemName">Nome do Freguês:</label>
           <div class="ui-inputgroup">
             <input #nomeFormInput type="text" id="nome" name="nome" pInputText formControlName="nome" autocomplete="off" placeholder="Ex: Fulano de tal"/>
           </div>
         </div>
 
         <div class="ui-g-12 ui-md-6 ui-lg-4">
-          <label for="itemName">Data de Nascimento</label>
-          <i *ngIf="outOfDate" pTooltip="Produto Vencido!" tooltipPosition="top" class="pi pi-calendar-times outOfDate"></i>
+          <label class="required" for="itemName">Data de Nascimento</label>
           <div class="ui-inputgroup">
-            <p-calendar formControlName="dataNascimento" dateFormat="dd/mm/yy"></p-calendar>
+            <p-calendar formControlName="dataNascimento" dateFormat="dd/mm/yy" placeholder="Ex: 01/01/1990"></p-calendar>
           </div>
         </div>
 
-        <div class="ui-g-12 ui-md-6 ui-lg-4">
-          <label class="required" for="itemName">Credito habilitado:</label>
+        <div class="ui-g-12 ui-md-6 ui-lg-8">
+          <label class="required" for="itemName">E-mail</label>
           <div class="ui-inputgroup">
-            <div class="radio-align">
-              <div class="ui-g-12">
-                <p-radioButton name="creditoHabilitado" value="true" label="Sim" formControlName="creditoHabilitado"></p-radioButton>
-              </div>
-              <div class="ui-g-12">
-                <p-radioButton name="creditoHabilitado" value="false" label="Não" formControlName="creditoHabilitado"></p-radioButton>
-              </div>
-            </div>
+            <input #emailFormInput type="text" id="email" name="email" pInputText formControlName="email" autocomplete="off" placeholder="Ex: fulano@mail.com"/>
           </div>
         </div>
 
         <div class="ui-g-12 ui-md-6 ui-lg-4">
           <label for="itemName">CPF</label>
-          <i *ngIf="outOfDate" pTooltip="Produto Vencido!" tooltipPosition="top" class="pi pi-calendar-times outOfDate"></i>
           <div class="ui-inputgroup">
             <input #cpfFormInput type="text" id="cpf" name="cpf" pInputText formControlName="cpf" autocomplete="off" placeholder="Ex: 012.227.992-19"/>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label for="itemName">Telefone</label>
+          <div class="ui-inputgroup">
+            <input #telefoneFormInput type="text" id="telefone" name="telefone" pInputText formControlName="telefone" autocomplete="off" placeholder="Ex: +55 (47) 99080-7060"/>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label class="required" for="itemName">Endereço</label>
+          <div class="ui-inputgroup">
+            <input #enderecoFormInput type="text" id="endereco" name="endereco" pInputText formControlName="endereco" autocomplete="off" placeholder="Ex: R. XV de Novembro, 1234"/>
           </div>
         </div>
 

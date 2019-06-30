@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClienteFormComponent } from './views/cliente-form/cliente-form.component';
-import { ClienteListComponent } from './views/cliente-list/cliente-list.component';
-import { ClienteRouterModule } from './cliente.routing';
+import { FreguesFormComponent } from './views/fregues-form/fregues-form.component';
+import { FreguesListComponent } from './views/fregues-list/fregues-list.component';
+import { FreguesRouterModule } from './fregues.routing';
 import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -14,13 +14,13 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { MessageService } from 'primeng/api';
 import { MessageModule } from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
-import { ClienteResolver } from './views/cliente-form/cliente.resolver';
+import { FreguesResolver } from './views/fregues-form/fregues.resolver';
 
 @NgModule({
-  declarations: [ClienteFormComponent, ClienteListComponent],
+  declarations: [FreguesFormComponent, FreguesListComponent],
   imports: [
     CommonModule,
-    ClienteRouterModule,
+    FreguesRouterModule,
     CardModule,
     ButtonModule,
     TableModule,
@@ -34,7 +34,7 @@ import { ClienteResolver } from './views/cliente-form/cliente.resolver';
   ],
   providers: [
     MessageService,
-    ClienteResolver
+    FreguesResolver
   ]
 })
-export class ClienteModule { }
+export class FreguesModule { }

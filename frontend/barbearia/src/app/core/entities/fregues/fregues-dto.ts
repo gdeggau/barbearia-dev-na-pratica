@@ -1,10 +1,12 @@
-export interface ClienteDto {
+export interface FreguesDto {
   id?: string;
   nome: string;
   dataNascimento: string;
-  creditoHabilitado: string;
-  cpf: string;
-  idFoto: string;
+  email: string;
+  cpf?: string;
+  telefone?: string;
+  endereco: string;
+  idFoto?: string;
   createdBy?: string;
   createdDate?: Date;
   lastModifiedBy?: string;

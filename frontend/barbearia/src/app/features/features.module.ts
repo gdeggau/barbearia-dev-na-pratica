@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FeaturesRouterModule } from './features.routing';
-import { ClienteModule } from './cliente/cliente.module';
+import { FreguesModule } from './fregues/fregues.module';
 import { RouterModule } from '@angular/router';
 import { ItemModule } from './item/item.module';
 
@@ -10,7 +10,7 @@ import { ItemModule } from './item/item.module';
   imports: [
     CommonModule,
     FeaturesRouterModule,
-    ClienteModule,
+    FreguesModule,
     ItemModule,
   ],
   exports: [

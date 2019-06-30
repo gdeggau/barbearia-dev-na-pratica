@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { Cliente } from 'src/app/core/entities/cliente/cliente';
-import { ClienteService } from 'src/app/core/entities/cliente/cliente.service';
+import { Fregues } from 'src/app/core/entities/fregues/fregues';
+import { FreguesService } from 'src/app/core/entities/fregues/fregues.service';
 import { catchError, takeUntil } from 'rxjs/operators';
 import { throwError, Subject } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,7 +10,7 @@ import { Item } from 'src/app/core/entities/item/item';
 import { ItemService } from 'src/app/core/entities/item/item.service';
 
 @Component({
-  selector: 'app-cliente-form',
+  selector: 'app-fregues-form',
   templateUrl: './item-form.component.html',
 })
 export class ItemFormComponent implements OnInit {
@@ -84,7 +84,7 @@ export class ItemFormComponent implements OnInit {
   public onRouteDataChange(data: any) {
     const entity = data[0];
     if (data[0]) {
-        const value: any = Cliente.fromDto(entity);
+        const value: any = Fregues.fromDto(entity);
         this.itemForm.patchValue(value);
     } else {
         this.itemForm.patchValue(new Item());
@@ -97,21 +97,21 @@ export class ItemFormComponent implements OnInit {
 
   private getSaveObservable() {
     const { value } = this.itemForm;
-    const clienteDto = Cliente.toDto(value);
+    const freguesDto = Fregues.toDto(value);
 
     let observable;
 
     if (this.isNew()) {
-        observable = this.temService.insert(clienteDto);
+        observable = this.temService.insert(freguesDto);
         this.messageService.add({
           key: 'form-toast',
           severity: 'success',
           summary: `Sucesso!`,
-          detail: `O cliente foi inserido com sucesso!`
+          detail: `O freguês foi inserido com sucesso!`
         });
     } else {
         const id = this.routeParams.id;
-        observable = this.temService.update(id, clienteDto);
+        observable = this.temService.update(id, freguesDto);
     }
 
     return observable;

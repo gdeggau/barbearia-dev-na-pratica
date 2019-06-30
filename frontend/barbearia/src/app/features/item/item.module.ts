@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClienteRouterModule } from './cliente.routing';
+import { FreguesRouterModule } from './fregues.routing';
 import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -20,7 +20,7 @@ import { ItemResolver } from './views/item-form/item.resolver';
   declarations: [ItemFormComponent, ItemListComponent],
   imports: [
     CommonModule,
-    ClienteRouterModule,
+    FreguesRouterModule,
     CardModule,
     ButtonModule,
     TableModule,

@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteService } from 'src/app/core/entities/cliente/cliente.service';
+import { FreguesService } from 'src/app/core/entities/fregues/fregues.service';
 import { MessageService } from 'primeng/components/common/messageservice';
-import { Cliente } from 'src/app/core/entities/cliente/cliente';
+import { Fregues } from 'src/app/core/entities/fregues/fregues';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
 @Component({
-  selector: 'app-cliente-list',
-  templateUrl: './cliente-list.component.html',
-  styleUrls: ['./cliente-list.component.scss']
+  selector: 'app-fregues-list',
+  templateUrl: './fregues-list.component.html',
+  styleUrls: ['./fregues-list.component.scss']
 })
-export class ClienteListComponent implements OnInit {
+export class FreguesListComponent implements OnInit {
 
-  clientes: Cliente[];
+  fregueses: Fregues[];
   columns: any[];
 
   constructor(
-    private clienteService: ClienteService,
+    private freguesService: FreguesService,
     private messageService: MessageService,
     private router: Router,
     private route: ActivatedRoute
     ) { }
 
   ngOnInit() {
-    this.clienteService.list()
+    this.freguesService.list()
     .pipe(this.listErrorCatch())
     .subscribe(({ contents }) => {
-      this.clientes = contents;
+      this.fregueses = contents;
     });
 
     this.columns = this.getGridColumns();
@@ -38,14 +38,16 @@ export class ClienteListComponent implements OnInit {
     const gridcloumns = [
       { field: 'nome', header: 'Nome' },
       { field: 'dataNascimento', header: 'Data de Nascimento' },
-      { field: 'creditoHabilitado', header: 'Credito Habilitado' },
+      { field: 'email', header: 'E-mail' },
       { field: 'cpf', header: 'CPF' },
+      { field: 'telefone', header: 'Telefone' },
+      { field: 'endereco', header: 'Endereço' }
     ];
 
     return gridcloumns;
   }
 
-  public onRemove(item: Cliente) {
+  public onRemove(item: Fregues) {
     this.messageService.add({
       key: 'removeConfirm',
       data: item, sticky: true,
@@ -56,25 +58,25 @@ export class ClienteListComponent implements OnInit {
   }
 
   public onAdd() {
-    this.router.navigate(['/cliente/create'], { relativeTo: this.route });
+    this.router.navigate(['/fregues/create'], { relativeTo: this.route });
   }
 
-  public editItem(cliente: Cliente) {
-    this.router.navigate([`/cliente/edit/${cliente.id}`], { relativeTo: this.route });
+  public editItem(fregues: Fregues) {
+    this.router.navigate([`/fregues/edit/${fregues.id}`], { relativeTo: this.route });
   }
 
   public onRemoveConfirm(item: any) {
     const { id, nome } = item.data;
 
-    this.clienteService.delete(id).subscribe(() => {
+    this.freguesService.delete(id).subscribe(() => {
       this.messageService.clear('removeConfirm');
-      this.clientes = this.clientes.filter(cliente => cliente.id !== id);
-      this.clientes.find((cliente: Cliente) => cliente.id === id);
+      this.fregueses = this.fregueses.filter(fregues => fregues.id !== id);
+      this.fregueses.find((fregues: Fregues) => fregues.id === id);
       this.messageService.add({
         key: 'remove-toast',
         severity: 'success',
         summary: `Sucesso!`,
-        detail: `Cliente ${nome} deletado!`
+        detail: `Freguês ${nome} deletado!`
       });
     });
   }

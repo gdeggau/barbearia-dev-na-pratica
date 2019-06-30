@@ -1,25 +1,25 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { Cliente } from 'src/app/core/entities/cliente/cliente';
-import { ClienteService } from 'src/app/core/entities/cliente/cliente.service';
+import { Fregues } from 'src/app/core/entities/fregues/fregues';
+import { FreguesService } from 'src/app/core/entities/fregues/fregues.service';
 import { catchError, takeUntil } from 'rxjs/operators';
 import { throwError, Subject } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
 @Component({
-  selector: 'app-cliente-form',
-  templateUrl: './cliente-form.component.html',
-  styleUrls: ['./cliente-form.component.scss']
+  selector: 'app-fregues-form',
+  templateUrl: './fregues-form.component.html',
+  styleUrls: ['./fregues-form.component.scss']
 })
-export class ClienteFormComponent implements OnInit {
-  public clienteForm: FormGroup;
-  @Input() cliente: Cliente;
+export class FreguesFormComponent implements OnInit {
+  public freguesForm: FormGroup;
+  @Input() fregues: Fregues;
   private routeParams: any;
   private ngUnsubscribe = new Subject();
 
   constructor(
-    private clienteService: ClienteService,
+    private freguesService: FreguesService,
     private formBuilder: FormBuilder,
     private router: Router,
     private messageService: MessageService,
@@ -28,7 +28,7 @@ export class ClienteFormComponent implements OnInit {
 
   ngOnInit() {
 
-    this.clienteForm = this.getFormGroup();
+    this.freguesForm = this.getFormGroup();
 
     this.route.params.pipe(takeUntil(this.ngUnsubscribe)).subscribe((params: any) => this.onRouteParamsChange(params));
     this.route.data.pipe(takeUntil(this.ngUnsubscribe)).subscribe((data: any) => this.onRouteDataChange(data));
@@ -39,8 +39,10 @@ export class ClienteFormComponent implements OnInit {
     return this.formBuilder.group({
       nome: new FormControl(undefined, Validators.compose([Validators.required])),
       dataNascimento: new FormControl(undefined, Validators.compose([Validators.required])),
-      creditoHabilitado: new FormControl(undefined, Validators.compose([Validators.required])),
+      email: new FormControl(undefined, Validators.compose([Validators.required])),
       cpf: new FormControl(undefined, Validators.compose([Validators.required])),
+      telefone: new FormControl(undefined, Validators.compose([Validators.required])),
+      endereco: new FormControl(undefined, Validators.compose([Validators.required]))
     });
   }
 
@@ -56,8 +58,8 @@ export class ClienteFormComponent implements OnInit {
   }
 
   public onSave() {
-    if (!this.clienteForm.valid) {
-      return this.validateAllFormFields(this.clienteForm);
+    if (!this.freguesForm.valid) {
+      return this.validateAllFormFields(this.freguesForm);
     }
 
     this.getSaveObservable()
@@ -77,17 +79,17 @@ export class ClienteFormComponent implements OnInit {
   }
 
   private goBack() {
-    const previousRoute = '/cliente/list';
+    const previousRoute = '/fregues/list';
     this.router.navigate([previousRoute], { relativeTo: this.route.parent });
   }
 
   public onRouteDataChange(data: any) {
     const entity = data[0];
     if (data[0]) {
-        const value: any = Cliente.fromDto(entity);
-        this.clienteForm.patchValue(value);
+        const value: any = Fregues.fromDto(entity);
+        this.freguesForm.patchValue(value);
     } else {
-        this.clienteForm.patchValue(new Cliente());
+        this.freguesForm.patchValue(new Fregues());
     }
   }
 
@@ -96,22 +98,22 @@ export class ClienteFormComponent implements OnInit {
 }
 
   private getSaveObservable() {
-    const { value } = this.clienteForm;
-    const clienteDto = Cliente.toDto(value);
+    const { value } = this.freguesForm;
+    const freguesDto = Fregues.toDto(value);
 
     let observable;
 
     if (this.isNew()) {
-        observable = this.clienteService.insert(clienteDto);
+        observable = this.freguesService.insert(freguesDto);
         this.messageService.add({
           key: 'form-toast',
           severity: 'success',
           summary: `Sucesso!`,
-          detail: `O cliente foi inserido com sucesso!`
+          detail: `O freguês foi inserido com sucesso!`
         });
     } else {
         const id = this.routeParams.id;
-        observable = this.clienteService.update(id, clienteDto);
+        observable = this.freguesService.update(id, freguesDto);
     }
 
     return observable;
