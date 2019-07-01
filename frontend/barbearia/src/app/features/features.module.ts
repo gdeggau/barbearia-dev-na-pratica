@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FeaturesRouterModule } from './features.routing';
 import { FreguesModule } from './fregues/fregues.module';
+import { FuncionarioModule } from './funcionario/funcionario.module';
+import { ServicoModule } from './servico/servico.module';
+import { AtendimentoModule } from './atendimento/atendimento.module';
 import { RouterModule } from '@angular/router';
-import { ItemModule } from './item/item.module';
 
 @NgModule({
   declarations: [],
@@ -11,7 +13,9 @@ import { ItemModule } from './item/item.module';
     CommonModule,
     FeaturesRouterModule,
     FreguesModule,
-    ItemModule,
+    FuncionarioModule,
+    ServicoModule,
+    AtendimentoModule
   ],
   exports: [
     RouterModule
