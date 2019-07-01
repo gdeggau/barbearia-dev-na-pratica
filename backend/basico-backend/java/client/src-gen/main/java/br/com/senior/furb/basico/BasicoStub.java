@@ -7,6 +7,8 @@ import java.util.concurrent.CompletableFuture;
 
 import br.com.senior.furb.basico.HelloWorldInput;
 import br.com.senior.furb.basico.HelloWorldOutput;
+import br.com.senior.furb.basico.TotalReceitasInput;
+import br.com.senior.furb.basico.TotalReceitasOutput;
 import br.com.senior.furb.basico.ObterUrlUploadFotoInput;
 import br.com.senior.furb.basico.ObterUrlUploadFotoOutput;
 import br.com.senior.furb.basico.GravarFotoInput;
@@ -80,6 +82,27 @@ public interface BasicoStub {
 	 * Chamada assíncrona utilizando request
 	 */
 	CompletableFuture<HelloWorldOutput> helloWorldRequest(HelloWorldInput input);
+	
+	/**
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * Chamada síncrona, o valor de timeout deve ser informado em ms 
+	 */
+	TotalReceitasOutput totalReceitas(TotalReceitasInput input, long timeout);
+	
+	/**
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * Chamada assíncrona
+	 */
+	void totalReceitas(TotalReceitasInput input);
+	
+	/**
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * Chamada assíncrona utilizando request
+	 */
+	CompletableFuture<TotalReceitasOutput> totalReceitasRequest(TotalReceitasInput input);
 	
 	/**
 	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice

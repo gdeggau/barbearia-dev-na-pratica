@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;V20190625201228047__Create_Entities.sql&apos; to &apos;common&apos;&#x0D;&#x0A;- Original project: &apos;furb-basico-server&apos;&#x0D;&#x0A;- Destination element: &apos;common&apos;&#x0D;&#x0A;- Original element: &apos;V20190625201228047__Create_Entities.sql&apos;" description="Copy file" element1="src-gen/main/resources/entities_resources/db_sample/migration_sample/furb/basico/PostgreSql/V20190625201228047__Create_Entities.sql" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1561504481550" target="/furb-basico-impl/src/main/resources/db/migration/furb/basico/common" units="0" version="1.0"/>
+</session>

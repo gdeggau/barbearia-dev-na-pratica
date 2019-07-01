@@ -12,6 +12,18 @@ service basico {
             }
         }
         
+        query totalReceitas {
+        	in{
+        		"Data inicial do atendimento"
+        		dataAtendimento: date
+        	}
+        	out{
+        		totalRecebido: double
+        		"Mensagem de negócio"
+        		message: string?
+        	}
+        }
+        
         "Obtém a URL para upload da foto"
         action obterUrlUploadFoto{
             in{

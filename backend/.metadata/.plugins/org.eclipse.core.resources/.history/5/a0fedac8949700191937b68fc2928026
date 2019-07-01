@@ -1,0 +1,17 @@
+package br.com.senior.furb.basico.core;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import com.querydsl.core.types.Expression;
+import com.querydsl.jpa.impl.JPAQuery;
+
+public class RepositoryBaseJpa {
+	
+	@PersistenceContext
+	protected EntityManager entityManager;
+
+	public <U> JPAQuery<U> select(Expression<U> expr){
+		return new JPAQuery<U>(entityManager).select(expr);
+	}
+}

@@ -1,0 +1,6 @@
+<!-- GENERATED ENTITIES: 2019-06-25 19:51:59:190 -->
+<class>br.com.senior.furb.basico.FreguesEntity</class>
+<class>br.com.senior.furb.basico.FuncionarioEntity</class>
+<class>br.com.senior.furb.basico.ServicoEntity</class>
+<class>br.com.senior.furb.basico.AtendimentoEntity</class>
+<class>br.com.senior.furb.basico.Atendimento_ServicosEntity</class>

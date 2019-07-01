@@ -1,0 +1,20 @@
+package br.com.senior.furb.basico.atendimento;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import br.com.senior.furb.basico.TotalReceitas;
+import br.com.senior.furb.basico.TotalReceitasInput;
+import br.com.senior.furb.basico.TotalReceitasOutput;
+
+public class HandlerTotalReceitasImpl implements TotalReceitas{
+	
+	@Autowired
+	AtendimentoRepositoryCustom stendimentoRepositoryCustom;
+
+	@Override
+	public TotalReceitasOutput totalReceitas(TotalReceitasInput request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

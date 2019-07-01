@@ -530,6 +530,24 @@
             <xsd:element name="createServico">
                 <xsd:complexType/>
             </xsd:element>
+            <xsd:element name="totalReceitas">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="dataAtendimento" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="totalReceitasOutput">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="totalRecebido" type="xsd:double" minOccurs="1" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                        <xsd:element name="message" type="xsd:string" minOccurs="0" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
             <xsd:element name="updateAtendimento">
                 <xsd:complexType/>
             </xsd:element>
@@ -1049,6 +1067,12 @@
     <wsdl:message name="createServicoResponse">
         <wsdl:part name="created" element="createServicoOutput"/>
     </wsdl:message>
+    <wsdl:message name="totalReceitasRequest">
+        <wsdl:part name="parameters" element="totalReceitas"/>
+    </wsdl:message>
+    <wsdl:message name="totalReceitasResponse">
+        <wsdl:part name="result" element="totalReceitasOutput"/>
+    </wsdl:message>
     <wsdl:message name="createMergeFreguesRequest">
         <wsdl:part name="parameters" element="createMergeFregues"/>
     </wsdl:message>
@@ -1326,6 +1350,13 @@
             </wsdl:documentation>
             <wsdl:input message="createServicoRequest"/>
             <wsdl:output message="createServicoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="totalReceitas">
+            <wsdl:documentation>
+            WARNING: THIS OPERATION IS PRIVATE AND MAY HAVE ITS BEHAVIOR CHANGED AT ANY TIME WITHOUT NOTICE. 
+            </wsdl:documentation>
+            <wsdl:input message="totalReceitasRequest"/>
+            <wsdl:output message="totalReceitasResponse"/>
         </wsdl:operation>
         <wsdl:operation name="createMergeFregues">
             <wsdl:documentation>
@@ -1692,6 +1723,15 @@
         </wsdl:operation>
         <wsdl:operation name="createServico">
             <soap:operation soapAction="createServico"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="totalReceitas">
+            <soap:operation soapAction="totalReceitas"/>
             <wsdl:input>
                 <soap:body use="literal"/>
             </wsdl:input>

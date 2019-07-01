@@ -13,6 +13,8 @@ import br.com.senior.sdl.user.UserIdentifier;
 import java.util.concurrent.CompletableFuture;
 import br.com.senior.furb.basico.HelloWorldInput;
 import br.com.senior.furb.basico.HelloWorldOutput;
+import br.com.senior.furb.basico.TotalReceitasInput;
+import br.com.senior.furb.basico.TotalReceitasOutput;
 import br.com.senior.furb.basico.ObterUrlUploadFotoInput;
 import br.com.senior.furb.basico.ObterUrlUploadFotoOutput;
 import br.com.senior.furb.basico.GravarFotoInput;
@@ -125,6 +127,39 @@ public class BasicoStubImpl  implements BasicoStub {
 	public CompletableFuture<HelloWorldOutput> helloWorldRequest(HelloWorldInput input) {
 		br.com.senior.furb.basico.impl.HelloWorldImpl impl = new br.com.senior.furb.basico.impl.HelloWorldImpl(messengerSupplier, userId, messageSupplier);
 		return impl.helloWorldRequest(input);
+	}
+	/**
+	 * Chamada síncrona para o método totalReceitas
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * @throws BasicoMessageException quando um erro com payload for retornado pela mensageria
+	 */
+	@Override
+	public TotalReceitasOutput totalReceitas(TotalReceitasInput input, long timeout) {
+		br.com.senior.furb.basico.impl.TotalReceitasImpl impl = new br.com.senior.furb.basico.impl.TotalReceitasImpl(messengerSupplier, userId, messageSupplier);
+		return impl.totalReceitas(input, timeout);
+	}
+	
+	/**
+	 * Chamada assíncrona para o método totalReceitas
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 */
+	@Override
+	public void totalReceitas(TotalReceitasInput input) {
+		br.com.senior.furb.basico.impl.TotalReceitasImpl impl = new br.com.senior.furb.basico.impl.TotalReceitasImpl(messengerSupplier, userId, messageSupplier);
+		impl.totalReceitas(input);
+	}
+	
+	/**
+	 * Chamada assíncrona para o método totalReceitas
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 */
+	@Override
+	public CompletableFuture<TotalReceitasOutput> totalReceitasRequest(TotalReceitasInput input) {
+		br.com.senior.furb.basico.impl.TotalReceitasImpl impl = new br.com.senior.furb.basico.impl.TotalReceitasImpl(messengerSupplier, userId, messageSupplier);
+		return impl.totalReceitasRequest(input);
 	}
 	/**
 	 * Chamada síncrona para o método obterUrlUploadFoto

@@ -148,6 +148,35 @@
             "extensionPoint" : false,
             "visibility" : "PUBLIC"
         },
+        "totalReceitas": {
+            "endpointType" : "command",
+            "kind": "query",
+            "idempotent": true,
+            "input" : {
+                "dataAtendimento" : {
+                    "type": "date",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "totalRecebido" : {
+                    "type": "double",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "message" : {
+                    "type": "string",
+                    "optional": true,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PRIVATE"
+        },
         "updateAtendimento": {
             "endpointType" : "command",
             "kind": "update",
