@@ -26,6 +26,23 @@ public interface BasicoConstants {
     	 */
     	String HELLO_WORLD_ERROR = "helloWorldError";
     	/**
+    	 * @see TotalReceitasInput the request payload
+    	 */
+    	String TOTAL_RECEITAS = "totalReceitas";
+    	/**
+    	 * The success response primitive for totalReceitas.
+    	 *
+    	 * @see #TOTAL_RECEITAS the request primitive
+    	 * @see TotalReceitasOutput the response payload
+    	 */
+    	String TOTAL_RECEITAS_RESPONSE = "totalReceitasResponse";
+    	/**
+    	 * An error response primitive for totalReceitas.
+    	 *
+    	 * @see #TOTAL_RECEITAS the request primitive
+    	 */
+    	String TOTAL_RECEITAS_ERROR = "totalReceitasError";
+    	/**
     	 * Obtém a URL para upload da foto
     	 * @see ObterUrlUploadFotoInput the request payload
     	 */

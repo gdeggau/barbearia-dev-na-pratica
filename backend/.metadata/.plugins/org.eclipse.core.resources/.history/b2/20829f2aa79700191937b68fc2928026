@@ -1,0 +1,13 @@
+package br.com.senior.furb.basico.atendimento;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import br.com.senior.furb.basico.Atendimento;
+import br.com.senior.furb.basico.AtendimentoEntity;
+
+public interface AtendimentoRepositoryCustom {
+	
+	List<AtendimentoEntity> findByDataAtendimentoAfter(LocalDate dataAtendimento);
+	
+}

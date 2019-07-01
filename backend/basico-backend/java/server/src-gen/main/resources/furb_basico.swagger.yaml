@@ -90,6 +90,76 @@ paths:
           schema:
             $ref: '#/definitions/genericError'
   
+  /basico/queries/totalReceitas:
+    post:
+      description: ""
+      tags:
+        - Queries
+      x-senior-visibility: PRIVATE
+      parameters:
+        - name: input
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - dataAtendimento
+            properties:
+              dataAtendimento:
+                type: string
+                format: date
+                description: "Data inicial do atendimento"
+      responses:
+        200:
+          description: Ok
+          schema:
+            type: object
+            required:
+              - totalRecebido
+            properties:
+              totalRecebido:
+                type: number
+                format: double
+                description: ""
+              message:
+                type: string
+                description: "Mensagem de negócio"
+        default:
+          description: Error response
+          schema:
+            $ref: '#/definitions/genericError'
+    get:
+      description: ""
+      tags:
+        - Queries
+      x-senior-visibility: PRIVATE
+      parameters:
+        - name: dataAtendimento
+          description: "Data inicial do atendimento"
+          in: query
+          required: true
+          type: string
+          format: date
+      responses:
+        200:
+          description: Ok
+          schema:
+            type: object
+            required:
+              - totalRecebido
+            properties:
+              totalRecebido:
+                type: number
+                format: double
+                description: ""
+              message:
+                type: string
+                description: "Mensagem de negócio"
+        default:
+          description: Error response
+          schema:
+            $ref: '#/definitions/genericError'
+  
   /basico/queries/getMetadata:
     post:
       description: "Default 'getMetadata' query. Every service must handle this command and return metadata in the format requested."

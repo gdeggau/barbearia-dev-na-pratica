@@ -1,2 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.FreguesBaseRepository"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.FuncionarioBaseRepository"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.ServicoBaseRepository"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.AtendimentoBaseRepository"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+<fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
+<fullyQualifiedTypeName name="com.querydsl.core.Tuple"/>
+<fullyQualifiedTypeName name="com.querydsl.core.types.Expression"/>
+<fullyQualifiedTypeName name="com.querydsl.core.types.EntityPath"/>
+<fullyQualifiedTypeName name="antlr.collections.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.Atendimento"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.AtendimentoEntity"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.core.RepositoryBaseJpa"/>
+<fullyQualifiedTypeName name="com.querydsl.jpa.impl.JPAQuery"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.QAtendimentoEntity"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.TotalReceitas"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.atendimento.AtendimentoRepository"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.atendimento.AtendimentoRepositoryCustom"/>
+<fullyQualifiedTypeName name="br.com.senior.furb.basico.TotalReceitasOutput"/>
+<fullyQualifiedTypeName name="br.com.senior.messaging.model.HandlerImpl"/>
+</qualifiedTypeNameHistroy>
