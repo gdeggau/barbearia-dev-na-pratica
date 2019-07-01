@@ -20,8 +20,6 @@ public class AtendimentoRepositoryCustomImpl extends RepositoryBaseJpa implement
 		JPAQuery<Double> query = select(atendimentos.valorTotal.sum()).from(atendimentos).where(atendimentos.dataAtendimento.after(dataAtendimento));
 		
 		return query.fetch().get(0).doubleValue();
-	}
-
-	
+	}	
 	
 }

@@ -27,7 +27,7 @@ public class HandlerTotalReceitasImpl implements TotalReceitas{
 			dados.message = "Não forma encontradas receitas a partir desta data!";
 		}
 		
-		return null;
+		return dados;
 	}
 
 }
