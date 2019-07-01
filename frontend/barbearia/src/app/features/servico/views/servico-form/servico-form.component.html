@@ -1,3 +1,29 @@
-<p>
-  servico-form works!
-</p>
+<div class=" ui-g-12 ui-md-12 ui-lg-12 ui-xl-12">
+  <p-toast [style]="{marginTop: '80px'}" position="top-right" key="form-toast"></p-toast>
+  <p-card class="centralized">
+    <p-header class="header-card-form">
+      <div class="ui-helper-clearfix title-card-header">
+        <span class="ui-panel-title">Adicionar novo serviço</span>
+      </div>
+    </p-header>
+  <form [formGroup]="freguesForm" >
+    <div class="">
+      <div class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-12 ui-lg-12">
+          <label class="required" for="itemName">Nome do Serviço:</label>
+          <div class="ui-inputgroup">
+            <input #nomeFormInput type="text" id="nome" name="nome" pInputText formControlName="nome" autocomplete="off" placeholder="Ex: Fulano de tal"/>
+          </div>
+        </div>
+      </div>
+      <p-footer>
+        <div class="group-button">
+          <button pButton type="button" (click)="onSave()" label="Salvar" class="ui-button-raised ui-button-success"></button>
+          <button pButton type="button" (click)="onCancel()" label="Cancelar" class="ui-button-raised ui-button-danger"></button>
+        </div>
+      </p-footer>
+    </div>
+  </form>
+</p-card>
+</div>
+
