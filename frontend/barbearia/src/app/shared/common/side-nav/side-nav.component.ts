@@ -23,10 +23,6 @@ export class SideNavComponent implements OnInit {
     {
       label: 'Atendimento',
       routerLink: '/atendimentos'
-    },
-    {
-      label: 'Items',
-      routerLink: '/items'
     }
   ];
 

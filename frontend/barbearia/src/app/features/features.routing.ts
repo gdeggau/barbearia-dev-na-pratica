@@ -5,7 +5,13 @@ const routes: Routes = [{
   path: 'fregueses', redirectTo: 'fregues/list'
 },
 {
-  path: 'items', redirectTo: 'item/list'
+  path: 'funcionarios', redirectTo: 'funcionario/list'
+},
+{
+  path: 'servicos', redirectTo: 'servico/list'
+},
+{
+  path: 'atendimentos', redirectTo: 'atendimento/list'
 }];
 
 @NgModule({
