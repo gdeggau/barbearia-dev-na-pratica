@@ -10,10 +10,31 @@
         </query>
         <query name="totalReceitas" idempotent="false" extensionPoint="false" visibility="PRIVATE">
             <input>
-                <slot name="dataAtendimento" type="date" optional="false" multivalued="false"/>
+                <slot name="dataInicial" type="date" optional="false" multivalued="false"/>
+                <slot name="dataFinal" type="date" optional="false" multivalued="false"/>
             </input>
             <output>
                 <slot name="totalRecebido" type="double" optional="false" multivalued="false"/>
+                <slot name="message" type="string" optional="true" multivalued="false"/>
+            </output>
+        </query>
+        <query name="totalDespesas" idempotent="false" extensionPoint="false" visibility="PRIVATE">
+            <input>
+                <slot name="dataInicial" type="date" optional="false" multivalued="false"/>
+                <slot name="dataFinal" type="date" optional="false" multivalued="false"/>
+            </input>
+            <output>
+                <slot name="totalGastos" type="double" optional="false" multivalued="false"/>
+                <slot name="message" type="string" optional="true" multivalued="false"/>
+            </output>
+        </query>
+        <query name="totalLucro" idempotent="false" extensionPoint="false" visibility="PRIVATE">
+            <input>
+                <slot name="dataInicial" type="date" optional="false" multivalued="false"/>
+                <slot name="dataFinal" type="date" optional="false" multivalued="false"/>
+            </input>
+            <output>
+                <slot name="totalLucro" type="double" optional="false" multivalued="false"/>
                 <slot name="message" type="string" optional="true" multivalued="false"/>
             </output>
         </query>

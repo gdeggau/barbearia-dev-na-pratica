@@ -1,4 +1,4 @@
-/* Database: PostgreSql. Generation date: 2019-06-30 21:59:02:265 */
+/* Database: PostgreSql. Generation date: 2019-07-01 23:08:29:458 */
 /* Entity Fregues */
 create table fregues (
 	id UUID NOT NULL,
@@ -65,10 +65,10 @@ alter table atendimento_servicos add constraint pk_atendimento_servicos primary 
 alter table atendimento add constraint pk_atendimento_id primary key(id);
 
 /* Foreign Key Constraints */
-alter table atendimento add constraint fkgm0mg2e8zor4a1svwbrhnauyporx foreign key (fregues) references fregues (id);
-alter table atendimento add constraint fkc8pozd2echmlofjf6uem4yftx8gk foreign key (funcionario) references funcionario (id);
-alter table atendimento_servicos add constraint fkfojapxa4ic2sntwd8gezgvox1ois foreign key (atendimento_id) references atendimento (id);
-alter table atendimento_servicos add constraint fka6imcvqqis3t50eujhbuioibfyrc foreign key (servicos_id) references servico (id);
+alter table atendimento add constraint fksro7qsqp9dzlsf0e3mbebayix2mm foreign key (fregues) references fregues (id);
+alter table atendimento add constraint fkeab0tgskb4crxq7g4akrncsesw4g foreign key (funcionario) references funcionario (id);
+alter table atendimento_servicos add constraint fk9tcz3d8qf1w8akqarvshpvcsbjeh foreign key (atendimento_id) references atendimento (id);
+alter table atendimento_servicos add constraint fkndypvktxnnmwlzazosj1bj2jzqfd foreign key (servicos_id) references servico (id);
 
 /* Unique Key Constraints */
 

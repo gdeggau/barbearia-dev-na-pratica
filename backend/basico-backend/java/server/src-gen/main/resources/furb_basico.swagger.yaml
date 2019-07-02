@@ -103,12 +103,17 @@ paths:
           schema:
             type: object
             required:
-              - dataAtendimento
+              - dataInicial
+              - dataFinal
             properties:
-              dataAtendimento:
+              dataInicial:
                 type: string
                 format: date
                 description: "Data inicial do atendimento"
+              dataFinal:
+                type: string
+                format: date
+                description: "Data final"
       responses:
         200:
           description: Ok
@@ -134,8 +139,14 @@ paths:
         - Queries
       x-senior-visibility: PRIVATE
       parameters:
-        - name: dataAtendimento
+        - name: dataInicial
           description: "Data inicial do atendimento"
+          in: query
+          required: true
+          type: string
+          format: date
+        - name: dataFinal
+          description: "Data final"
           in: query
           required: true
           type: string
@@ -155,6 +166,168 @@ paths:
               message:
                 type: string
                 description: "Mensagem de negócio"
+        default:
+          description: Error response
+          schema:
+            $ref: '#/definitions/genericError'
+  
+  /basico/queries/totalDespesas:
+    post:
+      description: ""
+      tags:
+        - Queries
+      x-senior-visibility: PRIVATE
+      parameters:
+        - name: input
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - dataInicial
+              - dataFinal
+            properties:
+              dataInicial:
+                type: string
+                format: date
+                description: ""
+              dataFinal:
+                type: string
+                format: date
+                description: ""
+      responses:
+        200:
+          description: Ok
+          schema:
+            type: object
+            required:
+              - totalGastos
+            properties:
+              totalGastos:
+                type: number
+                format: double
+                description: ""
+              message:
+                type: string
+                description: ""
+        default:
+          description: Error response
+          schema:
+            $ref: '#/definitions/genericError'
+    get:
+      description: ""
+      tags:
+        - Queries
+      x-senior-visibility: PRIVATE
+      parameters:
+        - name: dataInicial
+          description: ""
+          in: query
+          required: true
+          type: string
+          format: date
+        - name: dataFinal
+          description: ""
+          in: query
+          required: true
+          type: string
+          format: date
+      responses:
+        200:
+          description: Ok
+          schema:
+            type: object
+            required:
+              - totalGastos
+            properties:
+              totalGastos:
+                type: number
+                format: double
+                description: ""
+              message:
+                type: string
+                description: ""
+        default:
+          description: Error response
+          schema:
+            $ref: '#/definitions/genericError'
+  
+  /basico/queries/totalLucro:
+    post:
+      description: ""
+      tags:
+        - Queries
+      x-senior-visibility: PRIVATE
+      parameters:
+        - name: input
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - dataInicial
+              - dataFinal
+            properties:
+              dataInicial:
+                type: string
+                format: date
+                description: ""
+              dataFinal:
+                type: string
+                format: date
+                description: ""
+      responses:
+        200:
+          description: Ok
+          schema:
+            type: object
+            required:
+              - totalLucro
+            properties:
+              totalLucro:
+                type: number
+                format: double
+                description: ""
+              message:
+                type: string
+                description: ""
+        default:
+          description: Error response
+          schema:
+            $ref: '#/definitions/genericError'
+    get:
+      description: ""
+      tags:
+        - Queries
+      x-senior-visibility: PRIVATE
+      parameters:
+        - name: dataInicial
+          description: ""
+          in: query
+          required: true
+          type: string
+          format: date
+        - name: dataFinal
+          description: ""
+          in: query
+          required: true
+          type: string
+          format: date
+      responses:
+        200:
+          description: Ok
+          schema:
+            type: object
+            required:
+              - totalLucro
+            properties:
+              totalLucro:
+                type: number
+                format: double
+                description: ""
+              message:
+                type: string
+                description: ""
         default:
           description: Error response
           schema:

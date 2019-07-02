@@ -1,0 +1,63 @@
+https://platform-homologx.senior.com.br/t/senior.com.br/bridge/1.0/rest/furb/basico/entities/fregues   post
+{
+	"nome":"Rubens",
+	"dataNascimento":"1998-05-27",
+	"email":"rubens@gmail.com",
+	"cpf":"07898564596",
+	"telefone":"04755999998563",
+	"endereco":"Rua Xv de Novembro"
+}
+
+
+https://platform-homologx.senior.com.br/t/senior.com.br/bridge/1.0/rest/furb/basico/entities/servico  post
+{
+	"descricao":"Corte de cabelo adulto",
+	"valor":"20"
+}
+
+
+https://platform-homologx.senior.com.br/t/senior.com.br/bridge/1.0/rest/furb/basico/entities/funcionario  post
+{
+	"nome":"Gabriel",
+	"dataNascimento":"1999-04-23",
+	"email":"gabriel@gmail.com",
+	"cpf":"78967564264",
+	"telefone":"04755966664573",
+	"endereco":"Rua Xv de Novembro",
+	"nomeUsuario":"gabriel",
+	"senha":"12345",
+	"tipo":"ADM",
+	"salario":"3000"
+}
+
+
+https://platform-homologx.senior.com.br/t/senior.com.br/bridge/1.0/rest/furb/basico/entities/atendimento  post
+{ 
+  "dataAtendimento":"2019-06-25",
+  "fregues":{"id":"b00ac39f-6ca9-4838-aeaf-0639486db10c"},
+  "funcionario":{"id":"72beddd3-2d87-47d7-adcb-8860120d456e"},
+  "servicos":[{"id":"d923cc38-a0f0-44a3-8736-aba7e997aea9"},{"id":"816859a3-8591-4929-be00-73e8d8a2b7ff"}],
+  "valorTotal":"35"
+}
+
+
+
+https://platform-homologx.senior.com.br/t/senior.com.br/bridge/1.0/rest/furb/basico/queries/totalReceitas  post
+{
+	"dataInicial":"2019-06-20",
+	"dataFinal":"2019-07-01"
+}
+
+
+https://platform-homologx.senior.com.br/t/senior.com.br/bridge/1.0/rest/furb/basico/queries/totalDespesas post
+{
+	"dataInicial":"2019-06-20",
+	"dataFinal":"2019-07-01"
+}
+
+
+https://platform-homologx.senior.com.br/t/senior.com.br/bridge/1.0/rest/furb/basico/queries/totalLucro post
+{
+	"dataInicial":"2019-06-20",
+	"dataFinal":"2019-07-01"
+}

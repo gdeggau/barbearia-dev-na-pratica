@@ -15,6 +15,10 @@ import br.com.senior.furb.basico.HelloWorldInput;
 import br.com.senior.furb.basico.HelloWorldOutput;
 import br.com.senior.furb.basico.TotalReceitasInput;
 import br.com.senior.furb.basico.TotalReceitasOutput;
+import br.com.senior.furb.basico.TotalDespesasInput;
+import br.com.senior.furb.basico.TotalDespesasOutput;
+import br.com.senior.furb.basico.TotalLucroInput;
+import br.com.senior.furb.basico.TotalLucroOutput;
 import br.com.senior.furb.basico.ObterUrlUploadFotoInput;
 import br.com.senior.furb.basico.ObterUrlUploadFotoOutput;
 import br.com.senior.furb.basico.GravarFotoInput;
@@ -160,6 +164,72 @@ public class BasicoStubImpl  implements BasicoStub {
 	public CompletableFuture<TotalReceitasOutput> totalReceitasRequest(TotalReceitasInput input) {
 		br.com.senior.furb.basico.impl.TotalReceitasImpl impl = new br.com.senior.furb.basico.impl.TotalReceitasImpl(messengerSupplier, userId, messageSupplier);
 		return impl.totalReceitasRequest(input);
+	}
+	/**
+	 * Chamada síncrona para o método totalDespesas
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * @throws BasicoMessageException quando um erro com payload for retornado pela mensageria
+	 */
+	@Override
+	public TotalDespesasOutput totalDespesas(TotalDespesasInput input, long timeout) {
+		br.com.senior.furb.basico.impl.TotalDespesasImpl impl = new br.com.senior.furb.basico.impl.TotalDespesasImpl(messengerSupplier, userId, messageSupplier);
+		return impl.totalDespesas(input, timeout);
+	}
+	
+	/**
+	 * Chamada assíncrona para o método totalDespesas
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 */
+	@Override
+	public void totalDespesas(TotalDespesasInput input) {
+		br.com.senior.furb.basico.impl.TotalDespesasImpl impl = new br.com.senior.furb.basico.impl.TotalDespesasImpl(messengerSupplier, userId, messageSupplier);
+		impl.totalDespesas(input);
+	}
+	
+	/**
+	 * Chamada assíncrona para o método totalDespesas
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 */
+	@Override
+	public CompletableFuture<TotalDespesasOutput> totalDespesasRequest(TotalDespesasInput input) {
+		br.com.senior.furb.basico.impl.TotalDespesasImpl impl = new br.com.senior.furb.basico.impl.TotalDespesasImpl(messengerSupplier, userId, messageSupplier);
+		return impl.totalDespesasRequest(input);
+	}
+	/**
+	 * Chamada síncrona para o método totalLucro
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * @throws BasicoMessageException quando um erro com payload for retornado pela mensageria
+	 */
+	@Override
+	public TotalLucroOutput totalLucro(TotalLucroInput input, long timeout) {
+		br.com.senior.furb.basico.impl.TotalLucroImpl impl = new br.com.senior.furb.basico.impl.TotalLucroImpl(messengerSupplier, userId, messageSupplier);
+		return impl.totalLucro(input, timeout);
+	}
+	
+	/**
+	 * Chamada assíncrona para o método totalLucro
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 */
+	@Override
+	public void totalLucro(TotalLucroInput input) {
+		br.com.senior.furb.basico.impl.TotalLucroImpl impl = new br.com.senior.furb.basico.impl.TotalLucroImpl(messengerSupplier, userId, messageSupplier);
+		impl.totalLucro(input);
+	}
+	
+	/**
+	 * Chamada assíncrona para o método totalLucro
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 */
+	@Override
+	public CompletableFuture<TotalLucroOutput> totalLucroRequest(TotalLucroInput input) {
+		br.com.senior.furb.basico.impl.TotalLucroImpl impl = new br.com.senior.furb.basico.impl.TotalLucroImpl(messengerSupplier, userId, messageSupplier);
+		return impl.totalLucroRequest(input);
 	}
 	/**
 	 * Chamada síncrona para o método obterUrlUploadFoto

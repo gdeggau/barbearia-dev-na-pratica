@@ -77,12 +77,17 @@ paths:
             schema:
               type: object
               required:
-                - dataAtendimento
+                - dataInicial
+                - dataFinal
               properties:
-                dataAtendimento:
+                dataInicial:
                   type: string
                   format: date
                   description: "Data inicial do atendimento"
+                dataFinal:
+                  type: string
+                  format: date
+                  description: "Data final"
       parameters:
         - in: header
           name: Accept
@@ -121,8 +126,15 @@ paths:
         - bearerAuth: []
       parameters:
         - in : query
-          name : dataAtendimento
+          name : dataInicial
           description: "Data inicial do atendimento"
+          required: true
+          schema:
+            type: string
+            format: date
+        - in : query
+          name : dataFinal
+          description: "Data final"
           required: true
           schema:
             type: string
@@ -149,6 +161,112 @@ paths:
                   message:
                     type: string
                     description: "Mensagem de negócio"
+        default:
+          description: Error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/genericError'
+  
+  /rest/furb/basico/queries/totalDespesas:
+    post:
+      description: ""
+      tags:
+        - Queries
+      x-senior-visibility: PRIVATE
+      security :
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - dataInicial
+                - dataFinal
+              properties:
+                dataInicial:
+                  type: string
+                  format: date
+                  description: ""
+                dataFinal:
+                  type: string
+                  format: date
+                  description: ""
+      parameters:
+        - in: header
+          name: Accept
+          description: 'Content types and endpoint version for the request. Example: application/json;seniorx.version=2'
+          schema:
+            type: string
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - totalGastos
+                properties:
+                  totalGastos:
+                    type: number
+                    format: double
+                    description: ""
+                  message:
+                    type: string
+                    description: ""
+        default:
+          description: Error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/genericError'
+    get:
+      description: ""
+      tags:
+        - Queries
+      x-senior-visibility: PRIVATE
+      security :
+        - bearerAuth: []
+      parameters:
+        - in : query
+          name : dataInicial
+          description: ""
+          required: true
+          schema:
+            type: string
+            format: date
+        - in : query
+          name : dataFinal
+          description: ""
+          required: true
+          schema:
+            type: string
+            format: date
+        - in: header
+          name: Accept
+          description: 'Content types and endpoint version for the request. Example: application/json;seniorx.version=2'
+          schema:
+            type: string
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - totalGastos
+                properties:
+                  totalGastos:
+                    type: number
+                    format: double
+                    description: ""
+                  message:
+                    type: string
+                    description: ""
         default:
           description: Error response
           content:
@@ -324,6 +442,112 @@ paths:
                   - exportJobId
                 properties:
                   exportJobId:
+                    type: string
+                    description: ""
+        default:
+          description: Error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/genericError'
+  
+  /rest/furb/basico/queries/totalLucro:
+    post:
+      description: ""
+      tags:
+        - Queries
+      x-senior-visibility: PRIVATE
+      security :
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - dataInicial
+                - dataFinal
+              properties:
+                dataInicial:
+                  type: string
+                  format: date
+                  description: ""
+                dataFinal:
+                  type: string
+                  format: date
+                  description: ""
+      parameters:
+        - in: header
+          name: Accept
+          description: 'Content types and endpoint version for the request. Example: application/json;seniorx.version=2'
+          schema:
+            type: string
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - totalLucro
+                properties:
+                  totalLucro:
+                    type: number
+                    format: double
+                    description: ""
+                  message:
+                    type: string
+                    description: ""
+        default:
+          description: Error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/genericError'
+    get:
+      description: ""
+      tags:
+        - Queries
+      x-senior-visibility: PRIVATE
+      security :
+        - bearerAuth: []
+      parameters:
+        - in : query
+          name : dataInicial
+          description: ""
+          required: true
+          schema:
+            type: string
+            format: date
+        - in : query
+          name : dataFinal
+          description: ""
+          required: true
+          schema:
+            type: string
+            format: date
+        - in: header
+          name: Accept
+          description: 'Content types and endpoint version for the request. Example: application/json;seniorx.version=2'
+          schema:
+            type: string
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - totalLucro
+                properties:
+                  totalLucro:
+                    type: number
+                    format: double
+                    description: ""
+                  message:
                     type: string
                     description: ""
         default:

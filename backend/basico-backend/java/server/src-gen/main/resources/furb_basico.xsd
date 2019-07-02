@@ -521,7 +521,9 @@
     <xsd:element name="totalReceitas">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="dataAtendimento" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                <xsd:element name="dataInicial" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                </xsd:element>
+                <xsd:element name="dataFinal" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
                 </xsd:element>
             </xsd:sequence>
         </xsd:complexType>
@@ -712,6 +714,26 @@
     </xsd:element>
     <xsd:element name="createMergeFuncionario">
         <xsd:complexType/>
+    </xsd:element>
+    <xsd:element name="totalDespesas">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="dataInicial" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                </xsd:element>
+                <xsd:element name="dataFinal" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="totalDespesasOutput">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="totalGastos" type="xsd:double" minOccurs="1" maxOccurs="1"  readOnly="false">
+                </xsd:element>
+                <xsd:element name="message" type="xsd:string" minOccurs="0" maxOccurs="1"  readOnly="false">
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
     </xsd:element>
     <xsd:element name="listAtendimento">
         <xsd:complexType>
@@ -970,6 +992,26 @@
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="exportJobId" type="xsd:string" minOccurs="1" maxOccurs="1"  readOnly="false">
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="totalLucro">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="dataInicial" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                </xsd:element>
+                <xsd:element name="dataFinal" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="totalLucroOutput">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="totalLucro" type="xsd:double" minOccurs="1" maxOccurs="1"  readOnly="false">
+                </xsd:element>
+                <xsd:element name="message" type="xsd:string" minOccurs="0" maxOccurs="1"  readOnly="false">
                 </xsd:element>
             </xsd:sequence>
         </xsd:complexType>

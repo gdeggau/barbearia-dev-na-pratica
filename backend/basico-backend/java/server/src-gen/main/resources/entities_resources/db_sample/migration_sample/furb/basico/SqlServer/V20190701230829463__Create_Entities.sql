@@ -1,7 +1,7 @@
-/* Database: Oracle. Generation date: 2019-06-30 21:59:02:280 */
+/* Database: SqlServer. Generation date: 2019-07-01 23:08:29:463 */
 /* Entity Fregues */
 create table fregues (
-	id RAW(16) NOT NULL,
+	id UNIQUEIDENTIFIER NOT NULL,
 	nome VARCHAR(255) NOT NULL,
 	data_nascimento DATE NOT NULL /* dataNascimento */,
 	email VARCHAR(255) NOT NULL,
@@ -15,7 +15,7 @@ create table fregues (
 
 /* Entity Funcionario */
 create table funcionario (
-	id RAW(16) NOT NULL,
+	id UNIQUEIDENTIFIER NOT NULL,
 	nome VARCHAR(255) NOT NULL,
 	data_nascimento DATE NOT NULL /* dataNascimento */,
 	email VARCHAR(255) NOT NULL,
@@ -24,7 +24,7 @@ create table funcionario (
 	nome_usuario VARCHAR(255) NOT NULL /* nomeUsuario */,
 	senha VARCHAR(255) NOT NULL,
 	tipo VARCHAR(255) NOT NULL,
-	salario NUMBER(19,4) NOT NULL,
+	salario FLOAT(32) NOT NULL,
 	id_foto VARCHAR(255) /* idFoto */
 );
 
@@ -32,20 +32,20 @@ create table funcionario (
 
 /* Entity Servico */
 create table servico (
-	id RAW(16) NOT NULL,
+	id UNIQUEIDENTIFIER NOT NULL,
 	descricao VARCHAR(255) NOT NULL,
-	valor NUMBER(19,4) NOT NULL
+	valor FLOAT(32) NOT NULL
 );
 
 
 
 /* Entity Atendimento */
 create table atendimento (
-	id RAW(16) NOT NULL,
-	fregues RAW(16) NOT NULL,
-	funcionario RAW(16) NOT NULL,
+	id UNIQUEIDENTIFIER NOT NULL,
+	fregues UNIQUEIDENTIFIER NOT NULL,
+	funcionario UNIQUEIDENTIFIER NOT NULL,
 	data_atendimento DATE NOT NULL /* dataAtendimento */,
-	valor_total NUMBER(19,4) NOT NULL /* valorTotal */
+	valor_total FLOAT(32) NOT NULL /* valorTotal */
 );
 
 
@@ -53,8 +53,8 @@ create table atendimento (
 /* Join Tables */
 /* master: Atendimento as atendimento, detail: Servico as servico */
 create table atendimento_servicos (
-	atendimento_id RAW(16) NOT NULL,
-	servicos_id RAW(16) NOT NULL
+	atendimento_id UNIQUEIDENTIFIER NOT NULL,
+	servicos_id UNIQUEIDENTIFIER NOT NULL
 );
 
 /* Primary Key Constraints */
@@ -65,10 +65,10 @@ alter table atendimento_servicos add constraint pk_atendimento_servicos primary 
 alter table atendimento add constraint pk_atendimento_id primary key(id);
 
 /* Foreign Key Constraints */
-alter table atendimento add constraint fke1bpv8lymalnxrtjm7k2nhdt9avv foreign key (fregues) references fregues (id);
-alter table atendimento add constraint fkq51o77vuqrbwyfiveumeb9v2excs foreign key (funcionario) references funcionario (id);
-alter table atendimento_servicos add constraint fk4uxvekmxxaluktgdhhwgqtc3jqsm foreign key (atendimento_id) references atendimento (id);
-alter table atendimento_servicos add constraint fkkq0pxinbuv7shenmnqvwpassgp4r foreign key (servicos_id) references servico (id);
+alter table atendimento add constraint fkoypb9qxd96yuk38tqcepyzldehif foreign key (fregues) references fregues (id);
+alter table atendimento add constraint fk7etjjmwzrcoazx1ooeuvunfr4xiy foreign key (funcionario) references funcionario (id);
+alter table atendimento_servicos add constraint fkppq4xox4cbc3bcjgfpxfumbg5cch foreign key (atendimento_id) references atendimento (id);
+alter table atendimento_servicos add constraint fkopvu3xrdxatm0sdvmeixcty7h73i foreign key (servicos_id) references servico (id);
 
 /* Unique Key Constraints */
 

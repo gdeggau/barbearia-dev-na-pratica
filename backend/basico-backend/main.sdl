@@ -15,11 +15,35 @@ service basico {
         query totalReceitas {
         	in{
         		"Data inicial do atendimento"
-        		dataAtendimento: date
+        		dataInicial: date
+        		"Data final"
+        		dataFinal: date
         	}
         	out{
         		totalRecebido: double
         		"Mensagem de negócio"
+        		message: string?
+        	}
+        }
+        
+        query totalDespesas {
+        	in{
+        		dataInicial: date
+        		dataFinal: date
+        	}
+        	out{
+        		totalGastos: double
+        		message: string?
+        	}
+        }
+        
+        query totalLucro {
+        	in{
+        		dataInicial: date
+        		dataFinal: date
+        	}
+        	out{
+        		totalLucro: double
         		message: string?
         	}
         }

@@ -4,5 +4,9 @@ import java.time.LocalDate;
 
 public interface AtendimentoRepositoryCustom {
 	
-	Double findTotalReceitasByDataInicial(LocalDate dataInicial);
+	Double findTotalReceitas(LocalDate dataInicial, LocalDate dataFinal);
+	
+	Double findTotalDespesasFuncionarios(LocalDate dataInicial, LocalDate dataFinal);
+	
+	Double findTotalLucro(LocalDate dataInicial, LocalDate dataFinal);
 }

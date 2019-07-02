@@ -11,18 +11,18 @@ import br.com.senior.messaging.model.HandlerImpl;
 public class HandlerTotalReceitasImpl implements TotalReceitas{
 	
 	@Autowired
-	AtendimentoRepositoryCustom atendimentoRepositoryCustom;
+	AtendimentoRepositoryCustomImpl atendimentoRepositoryCustom;
 
 	@Override
 	public TotalReceitasOutput totalReceitas(TotalReceitasInput request) {
 
 		TotalReceitasOutput dados = new TotalReceitasOutput();
 		
-		Double receita = atendimentoRepositoryCustom.findTotalReceitasByDataInicial(request.dataAtendimento);
+		Double receita = atendimentoRepositoryCustom.findTotalReceitas(request.dataInicial, request.dataFinal);
 		
 		if(receita > 0 ) {
 			dados.totalRecebido = receita;
-			dados.message = "Total recebido!";
+			dados.message = "Total recebido: "+dados.totalRecebido;
 		}else {
 			dados.message = "Não forma encontradas receitas a partir desta data!";
 		}

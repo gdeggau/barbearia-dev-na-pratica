@@ -153,7 +153,13 @@
             "kind": "query",
             "idempotent": true,
             "input" : {
-                "dataAtendimento" : {
+                "dataInicial" : {
+                    "type": "date",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "dataFinal" : {
                     "type": "date",
                     "optional": false,
                     "multivalued": false,
@@ -427,6 +433,41 @@
             "output" : "funcionario",
             "extensionPoint" : false,
             "visibility" : "PUBLIC"
+        },
+        "totalDespesas": {
+            "endpointType" : "command",
+            "kind": "query",
+            "idempotent": true,
+            "input" : {
+                "dataInicial" : {
+                    "type": "date",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "dataFinal" : {
+                    "type": "date",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "totalGastos" : {
+                    "type": "double",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "message" : {
+                    "type": "string",
+                    "optional": true,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PRIVATE"
         },
         "listAtendimento": {
             "endpointType" : "command",
@@ -836,6 +877,41 @@
             },
             "extensionPoint" : false,
             "visibility" : "PUBLIC"
+        },
+        "totalLucro": {
+            "endpointType" : "command",
+            "kind": "query",
+            "idempotent": true,
+            "input" : {
+                "dataInicial" : {
+                    "type": "date",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "dataFinal" : {
+                    "type": "date",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "output" : {
+                "totalLucro" : {
+                    "type": "double",
+                    "optional": false,
+                    "multivalued": false,
+                    "readOnly": false
+                },
+                "message" : {
+                    "type": "string",
+                    "optional": true,
+                    "multivalued": false,
+                    "readOnly": false
+                }
+            },
+            "extensionPoint" : false,
+            "visibility" : "PRIVATE"
         },
         "obterUrlUploadFoto": {
             "endpointType" : "command",

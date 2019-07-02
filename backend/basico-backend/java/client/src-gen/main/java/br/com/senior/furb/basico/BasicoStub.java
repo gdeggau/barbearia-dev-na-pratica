@@ -9,6 +9,10 @@ import br.com.senior.furb.basico.HelloWorldInput;
 import br.com.senior.furb.basico.HelloWorldOutput;
 import br.com.senior.furb.basico.TotalReceitasInput;
 import br.com.senior.furb.basico.TotalReceitasOutput;
+import br.com.senior.furb.basico.TotalDespesasInput;
+import br.com.senior.furb.basico.TotalDespesasOutput;
+import br.com.senior.furb.basico.TotalLucroInput;
+import br.com.senior.furb.basico.TotalLucroOutput;
 import br.com.senior.furb.basico.ObterUrlUploadFotoInput;
 import br.com.senior.furb.basico.ObterUrlUploadFotoOutput;
 import br.com.senior.furb.basico.GravarFotoInput;
@@ -103,6 +107,48 @@ public interface BasicoStub {
 	 * Chamada assíncrona utilizando request
 	 */
 	CompletableFuture<TotalReceitasOutput> totalReceitasRequest(TotalReceitasInput input);
+	
+	/**
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * Chamada síncrona, o valor de timeout deve ser informado em ms 
+	 */
+	TotalDespesasOutput totalDespesas(TotalDespesasInput input, long timeout);
+	
+	/**
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * Chamada assíncrona
+	 */
+	void totalDespesas(TotalDespesasInput input);
+	
+	/**
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * Chamada assíncrona utilizando request
+	 */
+	CompletableFuture<TotalDespesasOutput> totalDespesasRequest(TotalDespesasInput input);
+	
+	/**
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * Chamada síncrona, o valor de timeout deve ser informado em ms 
+	 */
+	TotalLucroOutput totalLucro(TotalLucroInput input, long timeout);
+	
+	/**
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * Chamada assíncrona
+	 */
+	void totalLucro(TotalLucroInput input);
+	
+	/**
+	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice
+	 * 
+	 * Chamada assíncrona utilizando request
+	 */
+	CompletableFuture<TotalLucroOutput> totalLucroRequest(TotalLucroInput input);
 	
 	/**
 	 * Warning: this operation is PRIVATE and may have its behavior changed at any time without notice

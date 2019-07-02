@@ -43,6 +43,40 @@ public interface BasicoConstants {
     	 */
     	String TOTAL_RECEITAS_ERROR = "totalReceitasError";
     	/**
+    	 * @see TotalDespesasInput the request payload
+    	 */
+    	String TOTAL_DESPESAS = "totalDespesas";
+    	/**
+    	 * The success response primitive for totalDespesas.
+    	 *
+    	 * @see #TOTAL_DESPESAS the request primitive
+    	 * @see TotalDespesasOutput the response payload
+    	 */
+    	String TOTAL_DESPESAS_RESPONSE = "totalDespesasResponse";
+    	/**
+    	 * An error response primitive for totalDespesas.
+    	 *
+    	 * @see #TOTAL_DESPESAS the request primitive
+    	 */
+    	String TOTAL_DESPESAS_ERROR = "totalDespesasError";
+    	/**
+    	 * @see TotalLucroInput the request payload
+    	 */
+    	String TOTAL_LUCRO = "totalLucro";
+    	/**
+    	 * The success response primitive for totalLucro.
+    	 *
+    	 * @see #TOTAL_LUCRO the request primitive
+    	 * @see TotalLucroOutput the response payload
+    	 */
+    	String TOTAL_LUCRO_RESPONSE = "totalLucroResponse";
+    	/**
+    	 * An error response primitive for totalLucro.
+    	 *
+    	 * @see #TOTAL_LUCRO the request primitive
+    	 */
+    	String TOTAL_LUCRO_ERROR = "totalLucroError";
+    	/**
     	 * Obtém a URL para upload da foto
     	 * @see ObterUrlUploadFotoInput the request payload
     	 */

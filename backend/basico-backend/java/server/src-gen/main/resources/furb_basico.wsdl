@@ -533,7 +533,9 @@
             <xsd:element name="totalReceitas">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="dataAtendimento" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                        <xsd:element name="dataInicial" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                        <xsd:element name="dataFinal" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
                         </xsd:element>
                     </xsd:sequence>
                 </xsd:complexType>
@@ -724,6 +726,26 @@
             </xsd:element>
             <xsd:element name="createMergeFuncionario">
                 <xsd:complexType/>
+            </xsd:element>
+            <xsd:element name="totalDespesas">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="dataInicial" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                        <xsd:element name="dataFinal" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="totalDespesasOutput">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="totalGastos" type="xsd:double" minOccurs="1" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                        <xsd:element name="message" type="xsd:string" minOccurs="0" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
             </xsd:element>
             <xsd:element name="listAtendimento">
                 <xsd:complexType>
@@ -986,6 +1008,26 @@
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
+            <xsd:element name="totalLucro">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="dataInicial" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                        <xsd:element name="dataFinal" type="xsd:date" minOccurs="1" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="totalLucroOutput">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="totalLucro" type="xsd:double" minOccurs="1" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                        <xsd:element name="message" type="xsd:string" minOccurs="0" maxOccurs="1"  readOnly="false">
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
             <xsd:element name="obterUrlUploadFoto">
                 <xsd:complexType>
                     <xsd:sequence>
@@ -1091,6 +1133,12 @@
     <wsdl:message name="createMergeFuncionarioResponse">
         <wsdl:part name="result" element="createMergeFuncionarioOutput"/>
     </wsdl:message>
+    <wsdl:message name="totalDespesasRequest">
+        <wsdl:part name="parameters" element="totalDespesas"/>
+    </wsdl:message>
+    <wsdl:message name="totalDespesasResponse">
+        <wsdl:part name="result" element="totalDespesasOutput"/>
+    </wsdl:message>
     <wsdl:message name="listAtendimentoRequest">
         <wsdl:part name="pageRequest" element="listAtendimento"/>
     </wsdl:message>
@@ -1168,6 +1216,12 @@
     </wsdl:message>
     <wsdl:message name="exportAtendimentoResponse">
         <wsdl:part name="result" element="exportAtendimentoOutput"/>
+    </wsdl:message>
+    <wsdl:message name="totalLucroRequest">
+        <wsdl:part name="parameters" element="totalLucro"/>
+    </wsdl:message>
+    <wsdl:message name="totalLucroResponse">
+        <wsdl:part name="result" element="totalLucroOutput"/>
     </wsdl:message>
     <wsdl:message name="obterUrlUploadFotoRequest">
         <wsdl:part name="parameters" element="obterUrlUploadFoto"/>
@@ -1382,6 +1436,13 @@
             <wsdl:input message="createMergeFuncionarioRequest"/>
             <wsdl:output message="createMergeFuncionarioResponse"/>
         </wsdl:operation>
+        <wsdl:operation name="totalDespesas">
+            <wsdl:documentation>
+            WARNING: THIS OPERATION IS PRIVATE AND MAY HAVE ITS BEHAVIOR CHANGED AT ANY TIME WITHOUT NOTICE. 
+            </wsdl:documentation>
+            <wsdl:input message="totalDespesasRequest"/>
+            <wsdl:output message="totalDespesasResponse"/>
+        </wsdl:operation>
         <wsdl:operation name="listAtendimento">
             <wsdl:documentation>
             THIS OPERATION IS PUBLIC. 
@@ -1490,6 +1551,13 @@
             </wsdl:documentation>
             <wsdl:input message="exportAtendimentoRequest"/>
             <wsdl:output message="exportAtendimentoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="totalLucro">
+            <wsdl:documentation>
+            WARNING: THIS OPERATION IS PRIVATE AND MAY HAVE ITS BEHAVIOR CHANGED AT ANY TIME WITHOUT NOTICE. 
+            </wsdl:documentation>
+            <wsdl:input message="totalLucroRequest"/>
+            <wsdl:output message="totalLucroResponse"/>
         </wsdl:operation>
         <wsdl:operation name="obterUrlUploadFoto">
             <wsdl:documentation>
@@ -1766,6 +1834,15 @@
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
+        <wsdl:operation name="totalDespesas">
+            <soap:operation soapAction="totalDespesas"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
         <wsdl:operation name="listAtendimento">
             <soap:operation soapAction="listAtendimento"/>
             <wsdl:input>
@@ -1885,6 +1962,15 @@
         </wsdl:operation>
         <wsdl:operation name="exportAtendimento">
             <soap:operation soapAction="exportAtendimento"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="totalLucro">
+            <soap:operation soapAction="totalLucro"/>
             <wsdl:input>
                 <soap:body use="literal"/>
             </wsdl:input>
