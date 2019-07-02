@@ -41,8 +41,12 @@
         <ng-template pTemplate="body" let-fregues let-columns="columns">
           <tr [pSelectableRow]="rowData">
             <td>
-              <span class="ui-column-title">Nome:</span>
-              {{servico.nome}}
+              <span class="ui-column-title">Descrição:</span>
+              {{servico.descricao}}
+            </td>
+            <td>
+              <span class="ui-column-title">Valor:</span>
+              {{servico.valor}}
             </td>
             <td>
               <span class="ui-column-title"></span>
@@ -53,8 +57,8 @@
             </td>
           </tr>
         </ng-template>
-        <ng-template pTemplate="summary" *ngIf="items?.length !== 0">
-          Total {{servicos?.length}} Items
+        <ng-template pTemplate="summary" *ngIf="servicos?.length !== 0">
+          Total: {{servicos?.length}} serviço(s)
         </ng-template>
       </p-table>
     </p-card>

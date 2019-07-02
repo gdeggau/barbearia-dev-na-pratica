@@ -6,13 +6,21 @@
         <span class="ui-panel-title">Adicionar novo serviço</span>
       </div>
     </p-header>
-  <form [formGroup]="freguesForm" >
+  <form [formGroup]="servicoForm" >
     <div class="">
       <div class="ui-g ui-fluid">
         <div class="ui-g-12 ui-md-12 ui-lg-12">
-          <label class="required" for="itemName">Nome do Serviço:</label>
+          <label class="required" for="itemName">Descrição</label>
           <div class="ui-inputgroup">
-            <input #nomeFormInput type="text" id="nome" name="nome" pInputText formControlName="nome" autocomplete="off" placeholder="Ex: Fulano de tal"/>
+            <input #descricaoFormInput type="text" id="descricao" name="descricao" pInputText formControlName="descricao" autocomplete="off" placeholder="Ex: Corte de cabelo"/>
+          </div>
+        </div>
+      </div>
+      <div class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-12 ui-lg-12">
+          <label class="required" for="itemName">Valor</label>
+          <div class="ui-inputgroup">
+            <input #valorFormInput type="text" id="valor" name="valor" pInputText formControlName="valor" autocomplete="off" placeholder="Ex: 21.00"/>
           </div>
         </div>
       </div>
