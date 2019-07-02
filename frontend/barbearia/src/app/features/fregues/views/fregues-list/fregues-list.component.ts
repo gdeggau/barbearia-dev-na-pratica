@@ -8,8 +8,7 @@ import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-fregues-list',
-  templateUrl: './fregues-list.component.html',
-  styleUrls: ['./fregues-list.component.scss']
+  templateUrl: './fregues-list.component.html'
 })
 export class FreguesListComponent implements OnInit {
 

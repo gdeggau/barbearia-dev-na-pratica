@@ -9,8 +9,7 @@ import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-fregues-form',
-  templateUrl: './fregues-form.component.html',
-  styleUrls: ['./fregues-form.component.scss']
+  templateUrl: './fregues-form.component.html'
 })
 export class FreguesFormComponent implements OnInit {
   public freguesForm: FormGroup;

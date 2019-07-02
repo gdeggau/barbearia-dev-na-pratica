@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FreguesModule } from './entities/fregues/fregues.module';
-import { ItemModule } from './entities/item/item.module';
+import { FuncionarioModule } from './entities/funcionario/funcionario.module';
+import { ServicoModule } from './entities/servico/servico.module';
+import { AtendimentoModule } from './entities/atendimento/atendimento.module';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     FreguesModule,
-    ItemModule
+    FuncionarioModule,
+    ServicoModule,
+    AtendimentoModule
   ]
 })
 export class CoreModule { }

@@ -6,7 +6,6 @@ import { FuncionarioModule } from './funcionario/funcionario.module';
 import { ServicoModule } from './servico/servico.module';
 import { AtendimentoModule } from './atendimento/atendimento.module';
 import { RouterModule } from '@angular/router';
-import { ItemModule } from '../core/entities/item/item.module';
 
 @NgModule({
   declarations: [],
@@ -16,8 +15,7 @@ import { ItemModule } from '../core/entities/item/item.module';
     FreguesModule,
     FuncionarioModule,
     ServicoModule,
-    AtendimentoModule,
-    ItemModule,
+    AtendimentoModule
   ],
   exports: [
     RouterModule

@@ -9,8 +9,7 @@ import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-servico-form',
-  templateUrl: './servico-form.component.html',
-  styleUrls: ['./servico-form.component.scss']
+  templateUrl: './servico-form.component.html'
 })
 export class ServicoFormComponent implements OnInit {
   public servicoForm: FormGroup;

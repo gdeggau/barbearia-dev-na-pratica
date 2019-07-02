@@ -1,3 +1,79 @@
-<p>
-  funcionario-form works!
-</p>
+<div class=" ui-g-12 ui-md-12 ui-lg-12 ui-xl-12">
+  <p-toast [style]="{marginTop: '80px'}" position="top-right" key="form-toast"></p-toast>
+  <p-card class="centralized">
+    <p-header class="header-card-form">
+      <div class="ui-helper-clearfix title-card-header">
+        <span class="ui-panel-title">Adicionar novo funcionário</span>
+      </div>
+    </p-header>
+  <form [formGroup]="freguesForm" >
+    <div class="">
+      <div class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-12 ui-lg-12">
+          <label class="required" for="itemName">Nome do Funcionário:</label>
+          <div class="ui-inputgroup">
+            <input #nomeFormInput type="text" id="nome" name="nome" pInputText formControlName="nome" autocomplete="off" placeholder="Ex: Fulano de tal"/>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label class="required" for="itemName">Data de Nascimento</label>
+          <div class="ui-inputgroup">
+            <p-calendar formControlName="dataNascimento" dateFormat="dd/mm/yy" placeholder="Ex: 01/01/1990"></p-calendar>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-8">
+          <label class="required" for="itemName">E-mail</label>
+          <div class="ui-inputgroup">
+            <input #emailFormInput type="text" id="email" name="email" pInputText formControlName="email" autocomplete="off" placeholder="Ex: fulano@mail.com"/>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label class="required" for="itemName">CPF</label>
+          <div class="ui-inputgroup">
+            <input #cpfFormInput type="text" id="cpf" name="cpf" pInputText formControlName="cpf" autocomplete="off" placeholder="Ex: 012.227.992-19"/>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label class="required" for="itemName">Endereço</label>
+          <div class="ui-inputgroup">
+            <input #enderecoFormInput type="text" id="endereco" name="endereco" pInputText formControlName="endereco" autocomplete="off" placeholder="Ex: R. XV de Novembro, 1234"/>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label class="required" for="itemName">Nome do usuário</label>
+          <div class="ui-inputgroup">
+            <input #nomeUsuarioFormInput type="text" id="nomeUsuario" name="nomeUsuario" pInputText formControlName="nomeUsuario" autocomplete="off" placeholder="Ex: fdtal"/>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label class="required" for="itemName">Senha</label>
+          <div class="ui-inputgroup">
+            <input #senhaFormInput type="password" id="senha" name="senha" pInputText formControlName="senha" autocomplete="off"/>
+          </div>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+          <label class="required" for="itemName">Salário</label>
+          <div class="ui-inputgroup">
+            <input #salarioFormInput type="text" id="salario" name="salario" pInputText formControlName="salario" autocomplete="off" placeholder="Ex: 5000.00"/>
+          </div>
+        </div>
+
+      </div>
+      <p-footer>
+        <div class="group-button">
+          <button pButton type="button" (click)="onSave()" label="Salvar" class="ui-button-raised ui-button-success"></button>
+          <button pButton type="button" (click)="onCancel()" label="Cancelar" class="ui-button-raised ui-button-danger"></button>
+        </div>
+      </p-footer>
+    </div>
+  </form>
+</p-card>
+</div>
+
